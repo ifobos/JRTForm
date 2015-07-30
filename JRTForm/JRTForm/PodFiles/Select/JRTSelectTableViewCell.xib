@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="KGk-i7-Jjw" customClass="JRTSelectTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wu3-oB-FFc">
+                        <rect key="frame" x="20" y="2" width="280" height="15"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Placeholder" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pvr-ev-Cg1" userLabel="Placeholder">
+                        <rect key="frame" x="20" y="18" width="280" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="0.65000000000000002" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSz-Cf-ape" userLabel="textSelectedLabel">
+                        <rect key="frame" x="20" y="18" width="280" height="17"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbX-Pe-PRX">
+                        <rect key="frame" x="20" y="0.0" width="280" height="49"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="Ce3-Ni-D2c"/>
+                        </constraints>
+                        <state key="normal">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="touchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QlG-Ez-tj9"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="cSz-Cf-ape" secondAttribute="trailing" constant="20" symbolic="YES" id="1Pe-5P-8hB"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="height" secondItem="Pvr-ev-Cg1" secondAttribute="height" id="277-0g-etE"/>
+                    <constraint firstItem="Wu3-oB-FFc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Pq9-s5-Kel"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Q20-hX-AVo"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="top" secondItem="Wu3-oB-FFc" secondAttribute="bottom" constant="1" id="S5p-nh-538"/>
+                    <constraint firstAttribute="trailing" secondItem="Wu3-oB-FFc" secondAttribute="trailing" constant="20" symbolic="YES" id="SlY-1m-SJw"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="centerX" secondItem="Pvr-ev-Cg1" secondAttribute="centerX" id="gzn-rU-W3A"/>
+                    <constraint firstItem="FbX-Pe-PRX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="iFS-vj-kND"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="width" secondItem="Pvr-ev-Cg1" secondAttribute="width" id="l6G-a0-dUh"/>
+                    <constraint firstAttribute="trailing" secondItem="Pvr-ev-Cg1" secondAttribute="trailing" constant="20" symbolic="YES" id="ovn-Es-dC5"/>
+                    <constraint firstItem="FbX-Pe-PRX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pfR-dO-IVh"/>
+                    <constraint firstAttribute="trailing" secondItem="FbX-Pe-PRX" secondAttribute="trailing" constant="20" symbolic="YES" id="qaL-gQ-R88"/>
+                    <constraint firstItem="Wu3-oB-FFc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="tpu-9f-UMQ"/>
+                    <constraint firstItem="cSz-Cf-ape" firstAttribute="centerY" secondItem="Pvr-ev-Cg1" secondAttribute="centerY" id="u5M-7q-azA"/>
+                    <constraint firstItem="Pvr-ev-Cg1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="uom-T8-JQm"/>
+                    <constraint firstAttribute="bottom" secondItem="FbX-Pe-PRX" secondAttribute="bottom" id="xiZ-Om-XBs"/>
+                    <constraint firstItem="Pvr-ev-Cg1" firstAttribute="top" secondItem="Wu3-oB-FFc" secondAttribute="bottom" constant="1" id="zPu-Uy-R1l"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="277-0g-etE"/>
+                        <exclude reference="gzn-rU-W3A"/>
+                        <exclude reference="l6G-a0-dUh"/>
+                        <exclude reference="u5M-7q-azA"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label" destination="Wu3-oB-FFc" id="LAR-O3-yu5"/>
+                <outlet property="placeholderLabel" destination="Pvr-ev-Cg1" id="fJv-QE-AUC"/>
+                <outlet property="textLabel" destination="cSz-Cf-ape" id="0dp-ZI-POM"/>
+                <outlet property="textSelectedLabel" destination="cSz-Cf-ape" id="ddh-eo-ETi"/>
+            </connections>
+            <point key="canvasLocation" x="485" y="307"/>
+        </tableViewCell>
+    </objects>
+</document>
