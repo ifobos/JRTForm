@@ -19,9 +19,5 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+#import "JRTFormStringValidations.h"
+#import "JRTFormArrayValidations.h"

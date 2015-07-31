@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>26783575-98C5-4173-B84F-0F4B40D34899</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>JRTForm</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>6D4A366ED1B42659253106007D3251EFA6091C0A</key>
 		<string>https://github.com/ifobos/JRTForm.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>JRTForm/JRTForm.xcodeproj/project.xcworkspace</string>
+	<string>JRTForm/JRTForm.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>6D4A366ED1B42659253106007D3251EFA6091C0A</key>

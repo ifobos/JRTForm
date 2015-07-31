@@ -19,9 +19,27 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+#import "JRTFormRoundedImageView.h"
+
+@implementation JRTFormRoundedImageView
+
+
+-(void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
+    [self applyCornerRadius];
+}
+
+- (void)applyCornerRadius
+{
+    self.layer.cornerRadius     = self.cornerRadius;
+    self.layer.masksToBounds    = YES;
+}
+
+-(void)setCornerRadius:(CGFloat)cornerRadius
+{
+    _cornerRadius = cornerRadius;
+    if ([self superview]) [self applyCornerRadius];
+}
+
+@end

@@ -19,9 +19,17 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import UIKit;
+#import "JRTFormBaseCell.h"
+extern NSString * const kJRTFormFieldSwitchTableViewCell;
+
+@interface JRTFormSwitchTableViewCell : JRTFormBaseCell
+
+@property (nonatomic) BOOL on;
+
+- (void)setDefaultStyle;
+- (void)setErrorStyleWithMessage:(NSString *)errorMessage;
+
+- (void)setErrorMessageInValidationBlock:   (NSString *(^)(BOOL boolToValidate))errorMessageInValidationBlock;
+
+@end

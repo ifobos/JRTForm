@@ -19,9 +19,14 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import UIKit;
+@protocol JRTOptionsTableViewControllerDelegate
+@property (nonatomic, strong)NSArray *options;
+@property (nonatomic, strong)NSArray *selectedIndexes;
+@end
+
+@interface JRTFormOptionsTableViewController : UITableViewController
+@property (nonatomic, strong)id<JRTOptionsTableViewControllerDelegate> asignatedDelegate;
+@property (nonatomic) BOOL singleSelection;
+- (void)show;
+@end

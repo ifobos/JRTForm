@@ -19,9 +19,20 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import UIKit;
+#import "JRTFormBaseCell.h"
+extern NSString * const kJRTFormFieldSubmitButtonTableViewCell;
+
+@interface JRTFormSubmitButtonTableViewCell : JRTFormBaseCell
+@property (nonatomic, strong)NSMutableArray *fields;
+@property (nonatomic, strong)NSString *errorMessage;
+
+- (void)setSubmitBlock:(void (^)(NSArray *fieldCells))submitBlock;
+
+- (void)setButtonBackgroundColor:(UIColor *)color;
+- (void)setButtonTittleColor:(UIColor *)color;
+
+- (void)setDefaultStyle;
+- (void)setErrortStyle;
+
+@end

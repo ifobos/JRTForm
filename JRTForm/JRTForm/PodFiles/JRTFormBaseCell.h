@@ -19,9 +19,11 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import UIKit;
+
+@interface JRTFormBaseCell : UITableViewCell
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, strong)   NSString *name;
+- (UITableView *)superTableView;
+- (void)updateStyle;
+@end

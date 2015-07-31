@@ -19,9 +19,12 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import Foundation;
+@interface JRTFormArrayValidations : NSObject
+
+@property (nonatomic,readonly)NSString* (^required)     (NSArray *array);
+@property (nonatomic,readonly)NSString* (^maxLength)    (NSArray *array, NSUInteger maxlength);
+@property (nonatomic,readonly)NSString* (^minLength)    (NSArray *array, NSUInteger minlength);
+@property (nonatomic,readonly)NSString* (^exactLength)  (NSArray *array, NSUInteger exactlength);
+
+@end

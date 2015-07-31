@@ -19,9 +19,17 @@
 //THE SOFTWARE.
 
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
+@import UIKit;
+@import MapKit;
+
+#import "JRTFormBaseCell.h"
+extern NSString * const kJRTFormFieldMapTableViewCell;
+
+@interface JRTFormMapTableViewCell : JRTFormBaseCell
+
+@property (nonatomic)CLLocationCoordinate2D coordinate;
+- (void)setErrorMessageInValidationBlock:   (NSString *(^)(CLLocationCoordinate2D locationCoordinate))errorMessageInValidationBlock;
+
+- (void)setDefaultStyle;
+- (void)setErrorStyleWithMessage:(NSString *)errorMessage;
+@end
