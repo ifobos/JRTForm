@@ -184,47 +184,143 @@
 		3152247D1B6AF20100FC23F4 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
+				315224C21B6BDD7700FC23F4 /* Views */,
+				315224BF1B6BDD1800FC23F4 /* TableView */,
+				315224BD1B6BDCCE00FC23F4 /* Validation */,
+				315224BC1B6BDCAD00FC23F4 /* Helpers */,
+				315224BB1B6BDC9400FC23F4 /* Fields */,
+			);
+			path = PodFiles;
+			sourceTree = "<group>";
+		};
+		315224BB1B6BDC9400FC23F4 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				315224C61B6BDF3600FC23F4 /* TextView */,
+				315224C51B6BDF1300FC23F4 /* TextField */,
+				315224C41B6BDEE600FC23F4 /* Switch */,
+				315224C31B6BDEBB00FC23F4 /* Submit */,
+				315224C11B6BDD5200FC23F4 /* Select */,
+				315224C01B6BDD3600FC23F4 /* Map */,
+				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
+				315224841B6AF20100FC23F4 /* JRTFormFieldCells.h */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
+		315224BC1B6BDCAD00FC23F4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
 				3152247E1B6AF20100FC23F4 /* JRTFormActualViewController.h */,
 				3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		315224BD1B6BDCCE00FC23F4 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */,
+				315224961B6AF20100FC23F4 /* JRTFormStringValidations.h */,
+				315224971B6AF20100FC23F4 /* JRTFormStringValidations.m */,
 				315224801B6AF20100FC23F4 /* JRTFormArrayValidations.h */,
 				315224811B6AF20100FC23F4 /* JRTFormArrayValidations.m */,
+			);
+			name = Validation;
+			sourceTree = "<group>";
+		};
+		315224BE1B6BDCFE00FC23F4 /* BaseCell */ = {
+			isa = PBXGroup;
+			children = (
 				315224821B6AF20100FC23F4 /* JRTFormBaseCell.h */,
 				315224831B6AF20100FC23F4 /* JRTFormBaseCell.m */,
-				315224841B6AF20100FC23F4 /* JRTFormFieldCells.h */,
+			);
+			name = BaseCell;
+			sourceTree = "<group>";
+		};
+		315224BF1B6BDD1800FC23F4 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
 				315224851B6AF20100FC23F4 /* JRTFormTableView.h */,
 				315224861B6AF20100FC23F4 /* JRTFormTableView.m */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
+		315224C01B6BDD3600FC23F4 /* Map */ = {
+			isa = PBXGroup;
+			children = (
 				315224871B6AF20100FC23F4 /* JRTFormMapTableViewCell.h */,
 				315224881B6AF20100FC23F4 /* JRTFormMapTableViewCell.m */,
 				315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		315224C11B6BDD5200FC23F4 /* Select */ = {
+			isa = PBXGroup;
+			children = (
+				315224931B6AF20100FC23F4 /* JRTFormSelectTableViewCell.h */,
+				315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */,
+				315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */,
 				3152248A1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.h */,
 				3152248B1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m */,
 				3152248C1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib */,
+			);
+			name = Select;
+			sourceTree = "<group>";
+		};
+		315224C21B6BDD7700FC23F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				3152248D1B6AF20100FC23F4 /* JRTFormRoundedButton.h */,
 				3152248E1B6AF20100FC23F4 /* JRTFormRoundedButton.m */,
 				3152248F1B6AF20100FC23F4 /* JRTFormRoundedImageView.h */,
 				315224901B6AF20100FC23F4 /* JRTFormRoundedImageView.m */,
 				315224911B6AF20100FC23F4 /* JRTFormRoundedView.h */,
 				315224921B6AF20100FC23F4 /* JRTFormRoundedView.m */,
-				315224931B6AF20100FC23F4 /* JRTFormSelectTableViewCell.h */,
-				315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */,
-				315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */,
-				315224961B6AF20100FC23F4 /* JRTFormStringValidations.h */,
-				315224971B6AF20100FC23F4 /* JRTFormStringValidations.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		315224C31B6BDEBB00FC23F4 /* Submit */ = {
+			isa = PBXGroup;
+			children = (
 				315224981B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.h */,
 				315224991B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.m */,
 				3152249A1B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.xib */,
+			);
+			name = Submit;
+			sourceTree = "<group>";
+		};
+		315224C41B6BDEE600FC23F4 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
 				3152249B1B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.h */,
 				3152249C1B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.m */,
 				3152249D1B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.xib */,
+			);
+			name = Switch;
+			sourceTree = "<group>";
+		};
+		315224C51B6BDF1300FC23F4 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
 				3152249E1B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.h */,
 				3152249F1B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.m */,
 				315224A01B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		315224C61B6BDF3600FC23F4 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
 				315224A11B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.h */,
 				315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */,
 				315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */,
-				315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */,
 			);
-			path = PodFiles;
+			name = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
