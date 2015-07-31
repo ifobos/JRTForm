@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "JRTForm"
-  s.version      = "0.1.4"
+  s.version      = "0.0.1"
   s.summary      = "JRTForm framework to create forms"
   s.homepage     = "https://github.com/ifobos/JRTForm"
   s.license      = "MIT"
