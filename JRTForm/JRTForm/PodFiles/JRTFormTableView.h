@@ -20,6 +20,15 @@
 
 
 @import UIKit;
+#import "JRTFormFieldCells.h"
+
 @interface JRTFormTableView : UITableView
+
+- (JRTFormTextFieldTableViewCell *)formTextFieldTableViewCellWithName:(NSString*)name;
+- (JRTFormTextViewTableViewCell *)formTextViewTableViewCellWithName:(NSString*)name;
+- (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString*)name;
+- (JRTFormSwitchTableViewCell *)formSwitchTableViewCellWithName:(NSString*)name;
+- (JRTFormMapTableViewCell *)formMapTableViewCellWithName:(NSString*)name;
+- (JRTFormSubmitButtonTableViewCell *)formSubmitButtonTableViewCellWithName:(NSString*)name;
 
 @end

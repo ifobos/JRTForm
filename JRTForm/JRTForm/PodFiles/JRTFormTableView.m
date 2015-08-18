@@ -45,6 +45,71 @@
     [super setDelegate:self];
 }
 
+
+#pragma mark - Helpers
+
+- (id)formFieldCell:(NSString *)JRTFormFieldTableViewCell withName:(NSString *)name
+{
+    [self registerNib:[UINib nibWithNibName:JRTFormFieldTableViewCell bundle:nil] forCellReuseIdentifier:name];
+    JRTFormBaseCell *cell = [self dequeueReusableCellWithIdentifier:name];
+    cell.name             = name;
+    return cell;
+}
+
+- (JRTFormTextFieldTableViewCell *)formTextFieldTableViewCellWithName:(NSString*)name
+{
+    id cell =  [self formFieldCell:kJRTFormFieldTextFieldTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormTextFieldTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldTextFieldTableViewCell]
+                                          userInfo:nil];
+}
+
+- (JRTFormTextViewTableViewCell *)formTextViewTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCell:kJRTFormFieldTextViewTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormTextViewTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldTextViewTableViewCell]
+                                          userInfo:nil];
+}
+
+- (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCell:kJRTFormFieldSelectTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormSelectTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSelectTableViewCell]
+                                          userInfo:nil];
+}
+
+- (JRTFormSwitchTableViewCell *)formSwitchTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCell:kJRTFormFieldSwitchTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormSwitchTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSwitchTableViewCell]
+                                          userInfo:nil];
+}
+
+- (JRTFormMapTableViewCell *)formMapTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCell:kJRTFormFieldMapTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormMapTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldMapTableViewCell]
+                                          userInfo:nil];
+}
+
+- (JRTFormSubmitButtonTableViewCell *)formSubmitButtonTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCell:kJRTFormFieldSubmitButtonTableViewCell withName:name];
+    if ([cell isKindOfClass:[JRTFormSubmitButtonTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSubmitButtonTableViewCell]
+                                          userInfo:nil];
+}
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
