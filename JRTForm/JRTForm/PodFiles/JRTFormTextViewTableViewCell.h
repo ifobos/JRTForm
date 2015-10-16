@@ -30,10 +30,14 @@ extern NSString * const kJRTFormFieldTextViewTableViewCell;
 
 - (void)setErrorMessageInValidationBlock:   (NSString *(^)(NSString * stringToValidate))errorMessageInValidationBlock;
 - (void)setKeyboardType:                    (UIKeyboardType)keyboardType;
+- (void)setReturnKeyType:                   (UIReturnKeyType)returnKeyType;
 
 - (void)setDefaultStyle;
 - (void)setEmptyStyle;
 - (void)setErrorStyleWithMessage:(NSString *)errorMessage;
+
+- (void)fieldBecomeFirstResponder;
+
 
 #pragma mark - UITextViewDelegate
 

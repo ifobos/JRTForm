@@ -118,6 +118,11 @@ NSString * const kJRTFormFieldTextViewTableViewCell = @"JRTFormTextViewTableView
     [self.textView setKeyboardType:keyboardType];
 }
 
+- (void)setReturnKeyType:(UIReturnKeyType)returnKeyType
+{
+    self.textView.returnKeyType = returnKeyType;
+}
+
 #pragma mark - UITextViewDelegate
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
@@ -174,6 +179,13 @@ NSString * const kJRTFormFieldTextViewTableViewCell = @"JRTFormTextViewTableView
 {
     if (self.shouldInteractWithTextAttachment) return self.shouldInteractWithTextAttachment(textView, textAttachment, characterRange);
     return YES;
+}
+
+#pragma mark - Methods
+
+- (void)fieldBecomeFirstResponder
+{
+    [self.textView becomeFirstResponder];
 }
 
 @end

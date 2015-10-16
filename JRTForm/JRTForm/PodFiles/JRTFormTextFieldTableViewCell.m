@@ -113,6 +113,11 @@ NSString * const kJRTFormFieldTextFieldTableViewCell = @"JRTFormTextFieldTableVi
     [self.textField setKeyboardType:keyboardType];
 }
 
+- (void)setReturnKeyType:(UIReturnKeyType)returnKeyType
+{
+    self.textField.returnKeyType = returnKeyType;
+}
+
 #pragma mark - secure
 
 - (void)setSecureTextEntry:(BOOL)secure
@@ -164,5 +169,12 @@ NSString * const kJRTFormFieldTextFieldTableViewCell = @"JRTFormTextFieldTableVi
     if(self.shouldReturn) return self.shouldReturn(textField);
     else return YES;
 } // called when 'return' key pressed. return NO to ignore.
+
+#pragma mark - Methods
+
+- (void)fieldBecomeFirstResponder
+{
+    [self.textField becomeFirstResponder];
+}
 
 @end
