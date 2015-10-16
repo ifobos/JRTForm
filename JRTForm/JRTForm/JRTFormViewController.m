@@ -71,12 +71,20 @@ NSString * const kmapField                      = @"mapField";
     if (!_textField)
     {
         _textField                      = [self.formTableView formTextFieldTableViewCellWithName:ktextField];
-        [_textField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate) {
-        NSString *errorMessage          = nil;
-        if (!errorMessage) errorMessage = self.stringValidationHelper.required(stringToValidate);
-        if (!errorMessage) errorMessage = self.stringValidationHelper.alpha(stringToValidate);
-        if (!errorMessage) errorMessage = self.stringValidationHelper.maxLength(stringToValidate,8);
-        if (!errorMessage) errorMessage = self.stringValidationHelper.minLength(stringToValidate,3);
+        [_textField setReturnKeyType:UIReturnKeyNext];
+        __block JRTFormViewController *blocksafeSelf = self;
+        [_textField setShouldReturn:^BOOL(UITextField *textField)
+        {
+            [blocksafeSelf.secureTextField fieldBecomeFirstResponder];
+            return NO;
+        }];
+        [_textField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate)
+        {
+            NSString *errorMessage          = nil;
+            if (!errorMessage) errorMessage = self.stringValidationHelper.required(stringToValidate);
+            if (!errorMessage) errorMessage = self.stringValidationHelper.alpha(stringToValidate);
+            if (!errorMessage) errorMessage = self.stringValidationHelper.maxLength(stringToValidate,8);
+            if (!errorMessage) errorMessage = self.stringValidationHelper.minLength(stringToValidate,3);
             return errorMessage;
         }];
     }
@@ -89,10 +97,18 @@ NSString * const kmapField                      = @"mapField";
     {
         _secureTextField                = [self.formTableView formTextFieldTableViewCellWithName:ksecureTextField];
         [_secureTextField setSecureTextEntry:YES];
-        [_secureTextField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate) {
-        NSString *errorMessage          = nil;
-        if (!errorMessage) errorMessage = self.stringValidationHelper.required(stringToValidate);
-        if (!errorMessage) errorMessage = self.stringValidationHelper.minLength(stringToValidate,3);
+        [_secureTextField setReturnKeyType:UIReturnKeyNext];
+        __block JRTFormViewController *blocksafeSelf = self;
+        [_secureTextField setShouldReturn:^BOOL(UITextField *textField)
+         {
+             [blocksafeSelf.textViewField fieldBecomeFirstResponder];
+             return NO;
+         }];
+        [_secureTextField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate)
+        {
+            NSString *errorMessage          = nil;
+            if (!errorMessage) errorMessage = self.stringValidationHelper.required(stringToValidate);
+            if (!errorMessage) errorMessage = self.stringValidationHelper.minLength(stringToValidate,3);
             return errorMessage;
         }];
     }
