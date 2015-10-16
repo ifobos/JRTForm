@@ -22,10 +22,12 @@
 #import "JRTFormTableView.h"
 
 @interface JRTFormTableView ()<UITableViewDelegate>
-@property (nonatomic, strong) id<UITableViewDelegate> asignedDelegate;
+
 @end
 
 @implementation JRTFormTableView
+
+#pragma mark - View
 
 - (void)didMoveToSuperview
 {
@@ -33,8 +35,6 @@
         self.delegate = self;
     }
 }
-
-#pragma mark - Setters
 
 - (void)setDelegate:(id<UITableViewDelegate>)delegate
 {
@@ -48,7 +48,7 @@
 
 #pragma mark - Helpers
 
-- (id)formFieldCell:(NSString *)JRTFormFieldTableViewCell withName:(NSString *)name
+- (id)formFieldCellWithNibName:(NSString *)JRTFormFieldTableViewCell andNameIdentifier:(NSString *)name
 {
     [self registerNib:[UINib nibWithNibName:JRTFormFieldTableViewCell bundle:nil] forCellReuseIdentifier:name];
     JRTFormBaseCell *cell = [self dequeueReusableCellWithIdentifier:name];
@@ -58,7 +58,7 @@
 
 - (JRTFormTextFieldTableViewCell *)formTextFieldTableViewCellWithName:(NSString*)name
 {
-    id cell =  [self formFieldCell:kJRTFormFieldTextFieldTableViewCell withName:name];
+    id cell =  [self formFieldCellWithNibName:kJRTFormFieldTextFieldTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormTextFieldTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldTextFieldTableViewCell]
@@ -67,7 +67,7 @@
 
 - (JRTFormTextViewTableViewCell *)formTextViewTableViewCellWithName:(NSString*)name
 {
-    id cell = [self formFieldCell:kJRTFormFieldTextViewTableViewCell withName:name];
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldTextViewTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormTextViewTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldTextViewTableViewCell]
@@ -76,7 +76,7 @@
 
 - (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString*)name
 {
-    id cell = [self formFieldCell:kJRTFormFieldSelectTableViewCell withName:name];
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldSelectTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormSelectTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSelectTableViewCell]
@@ -85,7 +85,7 @@
 
 - (JRTFormSwitchTableViewCell *)formSwitchTableViewCellWithName:(NSString*)name
 {
-    id cell = [self formFieldCell:kJRTFormFieldSwitchTableViewCell withName:name];
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldSwitchTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormSwitchTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSwitchTableViewCell]
@@ -94,7 +94,7 @@
 
 - (JRTFormMapTableViewCell *)formMapTableViewCellWithName:(NSString*)name
 {
-    id cell = [self formFieldCell:kJRTFormFieldMapTableViewCell withName:name];
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldMapTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormMapTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldMapTableViewCell]
@@ -103,7 +103,7 @@
 
 - (JRTFormSubmitButtonTableViewCell *)formSubmitButtonTableViewCellWithName:(NSString*)name
 {
-    id cell = [self formFieldCell:kJRTFormFieldSubmitButtonTableViewCell withName:name];
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldSubmitButtonTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormSubmitButtonTableViewCell class]]) return cell;
     else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
                                             reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldSubmitButtonTableViewCell]
@@ -154,21 +154,24 @@
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:heightForRowAtIndexPath:)])
         return [self.asignedDelegate tableView:tableView heightForRowAtIndexPath:indexPath];
-    else return UITableViewAutomaticDimension;
+    else
+        return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:heightForHeaderInSection:)])
         return [self.asignedDelegate tableView:tableView heightForHeaderInSection:section];
-    else return UITableViewAutomaticDimension;
+    else
+        return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:heightForFooterInSection:)])
         return [self.asignedDelegate tableView:tableView heightForFooterInSection:section];
-    else return UITableViewAutomaticDimension;
+    else
+        return UITableViewAutomaticDimension;
 }
 
 
@@ -176,23 +179,26 @@
 // If these methods are implemented, the above -tableView:heightForXXX calls will be deferred until views are ready to be displayed, so more expensive logic can be placed there.
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(7_0)
 {
-    if ([self.asignedDelegate respondsToSelector:@selector(tableView:estimatedHeightForRowAtIndexPath:)])
-        return [self.asignedDelegate tableView:tableView estimatedHeightForRowAtIndexPath:indexPath];
-    else return UITableViewAutomaticDimension;
+//    if ([self.asignedDelegate respondsToSelector:@selector(tableView:estimatedHeightForRowAtIndexPath:)])
+//        return [self.asignedDelegate tableView:tableView estimatedHeightForRowAtIndexPath:indexPath];
+//    else
+        return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0)
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:estimatedHeightForHeaderInSection:)])
         return [self.asignedDelegate tableView:tableView estimatedHeightForHeaderInSection:section];
-    else return UITableViewAutomaticDimension;
+    else
+        return UITableViewAutomaticDimension;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForFooterInSection:(NSInteger)section NS_AVAILABLE_IOS(7_0)
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:estimatedHeightForFooterInSection:)])
         return [self.asignedDelegate tableView:tableView estimatedHeightForFooterInSection:section];
-    else return UITableViewAutomaticDimension;
+    else
+        return UITableViewAutomaticDimension;
 }
 
 // Section header & footer information. Views are preferred over title should you decide to provide both
@@ -358,6 +364,107 @@
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:performAction:forRowAtIndexPath:withSender:)])
         [self.asignedDelegate tableView:tableView performAction:action forRowAtIndexPath:indexPath withSender:sender];
 }
+
+
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidScroll:)])
+        [self.asignedDelegate scrollViewDidScroll:scrollView];
+}
+// any offset changes
+
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView NS_AVAILABLE_IOS(3_2)
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidZoom:)])
+        [self.asignedDelegate scrollViewDidZoom:scrollView];
+}
+// any zoom scale changes
+
+// called on start of dragging (may require some time and or distance to move)
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
+        [self.asignedDelegate scrollViewWillBeginDragging:scrollView];
+}
+// called on finger up if the user dragged. velocity is in points/millisecond. targetContentOffset may be changed to adjust where the scroll view comes to rest
+
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset NS_AVAILABLE_IOS(5_0)
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
+        [self.asignedDelegate scrollViewWillEndDragging:scrollView withVelocity:velocity targetContentOffset:targetContentOffset];
+}
+// called on finger up if the user dragged. decelerate is true if it will continue moving afterwards
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
+        [self.asignedDelegate scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
+
+- (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)])
+        [self.asignedDelegate scrollViewWillBeginDecelerating:scrollView];
+}
+// called on finger up as we are moving
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)])
+        [self.asignedDelegate scrollViewDidEndDecelerating:scrollView];
+}
+// called when scroll view grinds to a halt
+
+- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)])
+        [self.asignedDelegate scrollViewDidEndScrollingAnimation:scrollView];
+}
+// called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(viewForZoomingInScrollView:)])
+        return [self.asignedDelegate viewForZoomingInScrollView:scrollView];
+    else return nil;
+    
+}
+// return a view that will be scaled. if delegate returns nil, nothing happens
+
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view NS_AVAILABLE_IOS(3_2)
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)])
+        [self.asignedDelegate scrollViewWillBeginZooming:scrollView withView:view];
+    
+}
+// called before the scroll view begins zooming its content
+
+- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(CGFloat)scale
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
+        [self.asignedDelegate scrollViewDidEndZooming:scrollView withView:view atScale:scale];
+}
+// scale between minimum and maximum. called after any 'bounce' animations
+
+- (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewShouldScrollToTop:)])
+        return [self.asignedDelegate scrollViewShouldScrollToTop:scrollView];
+    else return YES;
+}
+// return a yes if you want to scroll to the top. if not defined, assumes YES
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    if ([self.asignedDelegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])
+        [self.asignedDelegate scrollViewDidScrollToTop:scrollView];
+    
+}
+// called when scrolling animation finished. may be called immediately if already at top
+
 
 
 @end

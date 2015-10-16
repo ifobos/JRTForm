@@ -24,11 +24,14 @@
 
 @interface JRTFormTableView : UITableView
 
+@property (nonatomic, strong) id<UITableViewDelegate> asignedDelegate;
+
 - (JRTFormTextFieldTableViewCell *)formTextFieldTableViewCellWithName:(NSString*)name;
 - (JRTFormTextViewTableViewCell *)formTextViewTableViewCellWithName:(NSString*)name;
 - (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString*)name;
 - (JRTFormSwitchTableViewCell *)formSwitchTableViewCellWithName:(NSString*)name;
 - (JRTFormMapTableViewCell *)formMapTableViewCellWithName:(NSString*)name;
 - (JRTFormSubmitButtonTableViewCell *)formSubmitButtonTableViewCellWithName:(NSString*)name;
+- (id)formFieldCellWithNibName:(NSString *)JRTFormFieldTableViewCell andNameIdentifier:(NSString *)name;
 
 @end
