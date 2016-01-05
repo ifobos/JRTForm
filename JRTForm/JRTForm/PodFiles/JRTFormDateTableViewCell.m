@@ -18,25 +18,24 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
+#import "JRTFormDateTableViewCell.h"
+#import "JRTFormDatePickerViewController.h"
 
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormOptionsTableViewController.h"
+NSString * const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
 
-NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell";
+@interface JRTFormDateTableViewCell ()<JRTDatePickerViewControllerDelegate>
 
-@interface JRTFormSelectTableViewCell ()<JRTOptionsTableViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UILabel  *label;
 @property (strong, nonatomic) IBOutlet UILabel  *placeholderLabel;
 @property (strong, nonatomic) IBOutlet UILabel  *textSelectedLabel;
 @property (nonatomic, strong) UIColor           *labelColor;
 @property (nonatomic        ) BOOL              hideableLabel;
 
-@property (nonatomic, strong)   NSArray *selectedOptions;
-@property (nonatomic, copy)     NSString * (^errorMessageInValidationBlock)   (NSArray *arrayToValidate);
+@property (nonatomic, copy)     NSString * (^errorMessageInValidationBlock)   (NSDate *dateToValidate);
 
 @end
 
-@implementation JRTFormSelectTableViewCell
+@implementation JRTFormDateTableViewCell
 
 @synthesize name = _name;
 
@@ -60,7 +59,7 @@ NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell
     self.textSelectedLabel.hidden   = NO;
     if (self.hideableLabel)
         self.label.hidden           = NO;
-
+    
 }
 
 - (void)setEmptyStyle
@@ -72,7 +71,7 @@ NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell
     self.textSelectedLabel.hidden   = YES;
     if (self.hideableLabel)
         self.label.hidden           = YES;
-
+    
 }
 
 - (void)setErrorStyleWithMessage:(NSString *)errorMessage
@@ -88,8 +87,8 @@ NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell
 
 - (void)updateStyle
 {
-    if (!self.isValid) [self setErrorStyleWithMessage:self.errorMessageInValidationBlock(self.selectedIndexes)];
-    else if (self.selectedOptions && [self.selectedOptions count] > 0) [self setDefaultStyle];
+    if (!self.isValid) [self setErrorStyleWithMessage:self.errorMessageInValidationBlock(self.date)];
+    else if (self.date) [self setDefaultStyle];
     else [self setEmptyStyle];
 }
 
@@ -100,38 +99,14 @@ NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell
     BOOL valid = YES;
     if (self.errorMessageInValidationBlock)
     {
-        NSString * errorMessage = self.errorMessageInValidationBlock(self.selectedOptions);
+        NSString * errorMessage = self.errorMessageInValidationBlock(self.date);
         if (errorMessage && ![errorMessage isEqualToString:@""]) valid = NO;
     }
     return valid;
 }
 
--(NSNumber *)selectedIndex
-{
-    if (self.singleSelection)
-    {
-        return [self.selectedIndexes firstObject];
-    }
-    else
-    {
-        @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
-                                           reason:[NSString stringWithFormat:@"%@ invalid, you must assign the singleSelection property to YES", NSStringFromSelector(_cmd)]
-                                         userInfo:nil];
-        return nil;
-    }
-}
 
 #pragma mark - Setters
-
--(void)setOptions:(NSArray *)options
-{
-    for (id option in options)
-        if (![option isKindOfClass:[NSString class]])
-            @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
-                                               reason:[NSString stringWithFormat:@"%@ must contain only objects of type NSString", NSStringFromSelector(_cmd)]
-                                             userInfo:nil];
-    _options = options;
-}
 
 - (void)setName:(NSString *)name
 {
@@ -140,52 +115,30 @@ NSString * const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell
     self.label.text             = name;
 }
 
--(void)setSelectedOptions:(NSArray *)selectedOptions
+-(void)setDate:(NSDate *)date
 {
-    _selectedOptions        = selectedOptions;
-    if ([selectedOptions count] <= 1)
-    {
-        self.textSelectedLabel.text = [selectedOptions firstObject];
-    }
-    else
-    {
-        NSMutableString *text   = [NSMutableString new];
-        for (int i = 0 ; i < [selectedOptions count]; i++)
-        {
-            NSString *option =  [selectedOptions objectAtIndex:i];
-            [text appendString:option];
-            if (i < [selectedOptions count]-1) [text appendString:@", "];
-        }
-        self.textSelectedLabel.text = [text stringByAppendingString:@"."];
-    }
-    
+    _date = date;
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setDateFormat:@"MMMM dd, yyyy"];
+    self.textSelectedLabel.text =[dateFormatter stringFromDate:date];
     [self updateStyle];
 }
+#pragma mark - DatePicker
 
--(void)setSelectedIndexes:(NSArray *)selectedIndexes
+- (void)displayDatePicker
 {
-    _selectedIndexes                = selectedIndexes;
-    NSMutableArray *selectedValues  = [NSMutableArray new];
-    for (NSNumber *index in selectedIndexes) [selectedValues addObject:[self.options objectAtIndex:index.intValue]];
-    self.selectedOptions            = selectedValues;
-    [self updateStyle];
-}
-
-#pragma mark - Options
-
-- (void)displayOptions
-{
-    JRTFormOptionsTableViewController *optionsViewController = [JRTFormOptionsTableViewController new];
-    optionsViewController.asignatedDelegate = self;
-    optionsViewController.singleSelection   = self.singleSelection;
-    [optionsViewController show];
+    JRTFormDatePickerViewController *datePickerViewController   = [JRTFormDatePickerViewController new];
+    datePickerViewController.asignatedDelegate                  = self;
+    [datePickerViewController show];
 }
 
 #pragma mark - Actions
 
 - (IBAction)touchUpInside:(id)sender
 {
-    [self displayOptions];
+    [self displayDatePicker];
 }
+
 
 @end

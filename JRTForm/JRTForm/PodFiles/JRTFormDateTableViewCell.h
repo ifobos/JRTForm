@@ -18,11 +18,20 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
+@import UIKit;
+#import "JRTFormBaseCell.h"
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
-#import "JRTFormDateTableViewCell.h"
+extern NSString * const kJRTFormFieldDateTableViewCell;
+
+@interface JRTFormDateTableViewCell : JRTFormBaseCell
+
+@property (nonatomic, readonly) NSDate *date;
+
+- (void)setErrorMessageInValidationBlock:   (NSString *(^)(NSDate *dateToValidate))errorMessageInValidationBlock;
+
+- (void)setDefaultStyle;
+- (void)setEmptyStyle;
+- (void)setErrorStyleWithMessage:(NSString *)errorMessage;
+
+
+@end

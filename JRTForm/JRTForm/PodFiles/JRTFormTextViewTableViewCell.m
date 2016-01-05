@@ -25,9 +25,12 @@ NSString * const kJRTFormFieldTextViewTableViewCell = @"JRTFormTextViewTableView
 
 @interface JRTFormTextViewTableViewCell() <UITextViewDelegate>
 
-@property (strong, nonatomic)   IBOutlet UILabel *label;
-@property (strong, nonatomic)   IBOutlet UITextView *textView;
-@property (strong, nonatomic)   IBOutlet UILabel *placeholderLabel;
+@property (strong, nonatomic)   IBOutlet UILabel        *label;
+@property (strong, nonatomic)   IBOutlet UITextView     *textView;
+@property (strong, nonatomic)   IBOutlet UILabel        *placeholderLabel;
+@property (nonatomic, strong)   UIColor                 *labelColor;
+@property (nonatomic        )   BOOL                    hideableLabel;
+
 @property (nonatomic, copy)     NSString * (^errorMessageInValidationBlock)   (NSString *stringToValidate);
 @property (nonatomic, copy)     void (^didEndEditing)                         (UITextView *textView);
 @property (nonatomic, copy)     void (^didBeginEditing)                       (UITextView *textView);
@@ -45,29 +48,47 @@ NSString * const kJRTFormFieldTextViewTableViewCell = @"JRTFormTextViewTableView
 
 @synthesize name = _name;
 
+
+#pragma mark - View
+
+- (void)didMoveToSuperview
+{
+    [super didMoveToSuperview];
+    self.hideableLabel  = self.label.hidden;
+    self.labelColor     = self.label.textColor;
+}
+
 #pragma mark - styles
 
 - (void)setDefaultStyle
 {
-    self.label.textColor            = [UIColor darkGrayColor];
-    self.label.hidden               = NO;
+    if(self.labelColor)
+    self.label.textColor            = self.labelColor;
     self.label.text                 = self.name;
     self.placeholderLabel.hidden    = YES;
+    if(self.hideableLabel)
+        self.label.hidden           = NO;
+
 }
 
 - (void)setEmptyStyle
 {
-    self.label.textColor            = [UIColor darkGrayColor];
-    self.label.hidden               = YES;
+    if(self.labelColor)
+    self.label.textColor            = self.labelColor;
     self.label.text                 = self.name;
     self.placeholderLabel.hidden    = NO;
+    if(self.hideableLabel)
+        self.label.hidden           = YES;
 }
 
 - (void)setErrorStyleWithMessage:(NSString *)errorMessage
 {
-    self.label.textColor    = [UIColor redColor];
-    self.label.hidden       = NO;
-    self.label.text         = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
+    if(self.labelColor)
+    self.label.textColor        = [UIColor redColor];
+    self.label.text             = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
+    if (self.hideableLabel)
+        self.label.hidden       = NO;
+
 }
 
 - (void)updateStyle

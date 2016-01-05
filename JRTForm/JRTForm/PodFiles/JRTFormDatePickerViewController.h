@@ -18,11 +18,14 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
+#import <UIKit/UIKit.h>
 
-#import "JRTFormTextFieldTableViewCell.h"
-#import "JRTFormTextViewTableViewCell.h"
-#import "JRTFormSelectTableViewCell.h"
-#import "JRTFormSwitchTableViewCell.h"
-#import "JRTFormMapTableViewCell.h"
-#import "JRTFormSubmitButtonTableViewCell.h"
-#import "JRTFormDateTableViewCell.h"
+@protocol JRTDatePickerViewControllerDelegate
+@property (nonatomic, strong)NSDate *date;
+@end
+
+@interface JRTFormDatePickerViewController : UIViewController
+@property (nonatomic, strong)id<JRTDatePickerViewControllerDelegate> asignatedDelegate;
+
+- (void)show;
+@end

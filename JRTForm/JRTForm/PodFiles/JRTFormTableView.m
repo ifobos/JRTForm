@@ -92,6 +92,15 @@
                                           userInfo:nil];
 }
 
+- (JRTFormDateTableViewCell *)formDateTableViewCellWithName:(NSString*)name
+{
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldDateTableViewCell andNameIdentifier:name];
+    if ([cell isKindOfClass:[JRTFormDateTableViewCell class]]) return cell;
+    else @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                            reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldDateTableViewCell]
+                                          userInfo:nil];
+}
+
 - (JRTFormMapTableViewCell *)formMapTableViewCellWithName:(NSString*)name
 {
     id cell = [self formFieldCellWithNibName:kJRTFormFieldMapTableViewCell andNameIdentifier:name];
@@ -287,7 +296,7 @@
 {
     if ([self.asignedDelegate respondsToSelector:@selector(tableView:editingStyleForRowAtIndexPath:)])
         return [self.asignedDelegate tableView:tableView editingStyleForRowAtIndexPath:indexPath];
-    else return UITableViewCellEditingStyleDelete;
+    else return UITableViewCellEditingStyleNone;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath NS_AVAILABLE_IOS(3_0)
