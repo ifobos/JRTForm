@@ -18,6 +18,7 @@ NSString * const ktextViewField                 = @"textViewField";
 NSString * const kselectOptionField             = @"selectOptionField";
 NSString * const kselectMultipleOptionField     = @"selectMultipleOptionField";
 NSString * const kswitchField                   = @"switchField";
+NSString * const kdateField                     = @"dateField";
 NSString * const kmapField                      = @"mapField";
 
 @interface JRTFormViewController ()
@@ -27,6 +28,7 @@ NSString * const kmapField                      = @"mapField";
 @property (nonatomic, strong) JRTFormSelectTableViewCell        *selectOptionField;
 @property (nonatomic, strong) JRTFormSelectTableViewCell        *selectMultipleOptionField;
 @property (nonatomic, strong) JRTFormSwitchTableViewCell        *switchField;
+@property (nonatomic, strong) JRTFormDateTableViewCell          *dateField;
 @property (nonatomic, strong) JRTFormMapTableViewCell           *mapField;
 @property (nonatomic, strong) JRTFormSubmitButtonTableViewCell  *submitButton;
 
@@ -46,13 +48,13 @@ NSString * const kmapField                      = @"mapField";
 
 #pragma mark - Properties
 
--(JRTFormStringValidations *)stringValidationHelper
+- (JRTFormStringValidations *)stringValidationHelper
 {
     if (!_stringValidationHelper) _stringValidationHelper = [JRTFormStringValidations new];
     return _stringValidationHelper;
 }
 
--(JRTFormArrayValidations *)arrayValidationHelper
+- (JRTFormArrayValidations *)arrayValidationHelper
 {
     if (!_arrayValidationHelper) _arrayValidationHelper = [JRTFormArrayValidations new];
     return _arrayValidationHelper;
@@ -66,7 +68,7 @@ NSString * const kmapField                      = @"mapField";
 }
 
 
--(JRTFormTextFieldTableViewCell *)textField
+- (JRTFormTextFieldTableViewCell *)textField
 {
     if (!_textField)
     {
@@ -91,7 +93,7 @@ NSString * const kmapField                      = @"mapField";
     return _textField;
 }
 
--(JRTFormTextFieldTableViewCell *)secureTextField
+- (JRTFormTextFieldTableViewCell *)secureTextField
 {
     if (!_secureTextField)
     {
@@ -115,7 +117,7 @@ NSString * const kmapField                      = @"mapField";
     return _secureTextField;
 }
 
--(JRTFormTextViewTableViewCell *)textViewField
+- (JRTFormTextViewTableViewCell *)textViewField
 {
     if (!_textViewField)
     {
@@ -133,7 +135,7 @@ NSString * const kmapField                      = @"mapField";
 }
 
 
--(JRTFormSelectTableViewCell *)selectOptionField
+- (JRTFormSelectTableViewCell *)selectOptionField
 {
     if (!_selectOptionField)
     {
@@ -149,7 +151,7 @@ NSString * const kmapField                      = @"mapField";
     return _selectOptionField;
 }
 
--(JRTFormSelectTableViewCell *)selectMultipleOptionField
+- (JRTFormSelectTableViewCell *)selectMultipleOptionField
 {
     if (!_selectMultipleOptionField)
     {
@@ -167,7 +169,7 @@ NSString * const kmapField                      = @"mapField";
     return _selectMultipleOptionField;
 }
 
--(JRTFormSwitchTableViewCell *)switchField
+- (JRTFormSwitchTableViewCell *)switchField
 {
     if (!_switchField)
     {
@@ -176,7 +178,16 @@ NSString * const kmapField                      = @"mapField";
     return _switchField;
 }
 
--(JRTFormMapTableViewCell *)mapField
+- (JRTFormDateTableViewCell *)dateField
+{
+    if (!_dateField)
+    {
+        _dateField = [self.formTableView formDateTableViewCellWithName:kdateField];
+    }
+    return _dateField;
+}
+
+- (JRTFormMapTableViewCell *)mapField
 {
     if (!_mapField)
     {
@@ -225,7 +236,7 @@ NSString * const kmapField                      = @"mapField";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 8;
+    return 9;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -236,7 +247,8 @@ NSString * const kmapField                      = @"mapField";
     else if(indexPath.row == 3)     return self.selectOptionField;
     else if(indexPath.row == 4)     return self.selectMultipleOptionField;
     else if(indexPath.row == 5)     return self.switchField;
-    else if(indexPath.row == 6)     return self.mapField;
+    else if(indexPath.row == 6)     return self.dateField;
+    else if(indexPath.row == 7)     return self.mapField;
     else
     {
         return self.submitButton;

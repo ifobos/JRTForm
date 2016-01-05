@@ -36,6 +36,10 @@
 		315224B81B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224A01B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib */; };
 		315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */; };
 		315224BA1B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */; };
+		319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319FAB101C3C701C00F46D83 /* JRTFormDatePickerViewController.m */; };
+		319FAB161C3C701C00F46D83 /* JRTFormDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */; };
+		319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */; };
+		319FAB181C3C701C00F46D83 /* JRTFormDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +105,12 @@
 		315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormTextViewTableViewCell.m; sourceTree = "<group>"; };
 		315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormTextViewTableViewCell.xib; sourceTree = "<group>"; };
 		315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormValidationsBlocks.h; sourceTree = "<group>"; };
+		319FAB0F1C3C701C00F46D83 /* JRTFormDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormDatePickerViewController.h; sourceTree = "<group>"; };
+		319FAB101C3C701C00F46D83 /* JRTFormDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormDatePickerViewController.m; sourceTree = "<group>"; };
+		319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormDatePickerViewController.xib; sourceTree = "<group>"; };
+		319FAB121C3C701C00F46D83 /* JRTFormDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormDateTableViewCell.h; sourceTree = "<group>"; };
+		319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormDateTableViewCell.m; sourceTree = "<group>"; };
+		319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormDateTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +211,7 @@
 				315224C41B6BDEE600FC23F4 /* Switch */,
 				315224C31B6BDEBB00FC23F4 /* Submit */,
 				315224C11B6BDD5200FC23F4 /* Select */,
+				319FAB0E1C3C6FC100F46D83 /* Date */,
 				315224C01B6BDD3600FC23F4 /* Map */,
 				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
 				315224841B6AF20100FC23F4 /* JRTFormFieldCells.h */,
@@ -323,6 +334,19 @@
 			name = TextView;
 			sourceTree = "<group>";
 		};
+		319FAB0E1C3C6FC100F46D83 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				319FAB0F1C3C701C00F46D83 /* JRTFormDatePickerViewController.h */,
+				319FAB101C3C701C00F46D83 /* JRTFormDatePickerViewController.m */,
+				319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */,
+				319FAB121C3C701C00F46D83 /* JRTFormDateTableViewCell.h */,
+				319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */,
+				319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */,
+			);
+			name = Date;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -367,7 +391,7 @@
 		315223F51B6ADFD400FC23F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Juan Garcia";
 				TargetAttributes = {
 					315223FC1B6ADFD400FC23F4 = {
@@ -405,10 +429,12 @@
 			files = (
 				315224B61B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.xib in Resources */,
 				315224B81B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib in Resources */,
+				319FAB181C3C701C00F46D83 /* JRTFormDateTableViewCell.xib in Resources */,
 				315224AC1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib in Resources */,
 				315224B41B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.xib in Resources */,
 				315224BA1B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib in Resources */,
 				315224111B6ADFD400FC23F4 /* LaunchScreen.xib in Resources */,
+				319FAB161C3C701C00F46D83 /* JRTFormDatePickerViewController.xib in Resources */,
 				315224AA1B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib in Resources */,
 				3152240E1B6ADFD400FC23F4 /* Images.xcassets in Resources */,
 				315224B11B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib in Resources */,
@@ -436,6 +462,7 @@
 				315224AF1B6AF20100FC23F4 /* JRTFormRoundedView.m in Sources */,
 				315224B21B6AF20100FC23F4 /* JRTFormStringValidations.m in Sources */,
 				315224AD1B6AF20100FC23F4 /* JRTFormRoundedButton.m in Sources */,
+				319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */,
 				315224A81B6AF20100FC23F4 /* JRTFormTableView.m in Sources */,
 				315224B71B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.m in Sources */,
 				315224B01B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m in Sources */,
@@ -445,6 +472,7 @@
 				315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */,
 				315224AB1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m in Sources */,
 				315224A71B6AF20100FC23F4 /* JRTFormBaseCell.m in Sources */,
+				319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */,
 				315224291B6AE0CA00FC23F4 /* JRTFormViewController.m in Sources */,
 				315224B31B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.m in Sources */,
 				315224031B6ADFD400FC23F4 /* main.m in Sources */,
@@ -502,6 +530,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -569,6 +598,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JRTForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -583,6 +613,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = JRTForm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -603,6 +634,7 @@
 				);
 				INFOPLIST_FILE = JRTFormTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JRTForm.app/JRTForm";
 			};
@@ -618,6 +650,7 @@
 				);
 				INFOPLIST_FILE = JRTFormTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JRTForm.app/JRTForm";
 			};
