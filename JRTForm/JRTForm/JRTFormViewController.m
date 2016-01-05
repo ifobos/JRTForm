@@ -183,6 +183,14 @@ NSString * const kmapField                      = @"mapField";
     if (!_dateField)
     {
         _dateField = [self.formTableView formDateTableViewCellWithName:kdateField];
+        [_dateField setErrorMessageInValidationBlock:^NSString *(NSDate *dateToValidate) {
+            NSLog(@"date: %@", dateToValidate.description);
+            if (!dateToValidate)
+            {
+                return @"is required";
+            }
+            else return nil;
+        }];
     }
     return _dateField;
 }
@@ -210,7 +218,15 @@ NSString * const kmapField                      = @"mapField";
     {
         static NSString *kSubmit = @"Submit";
         _submitButton = [self.formTableView formSubmitButtonTableViewCellWithName:kSubmit];
-        [_submitButton setFields:(NSMutableArray *)@[self.textField, self.secureTextField, self.textViewField, self.selectOptionField, self.selectMultipleOptionField, self.mapField]];
+        [_submitButton setFields:(NSMutableArray *)@[
+                                                     self.textField,
+                                                     self.secureTextField,
+                                                     self.textViewField,
+                                                     self.selectOptionField,
+                                                     self.selectMultipleOptionField,
+                                                     self.dateField,
+                                                     self.mapField
+                                                     ]];
         __block JRTFormViewController *blockSelf = self;
         [_submitButton setSubmitBlock:^(NSArray *fieldCells) {
             NSLog(@"%@: %@",ktextField,                 blockSelf.textField.text);
