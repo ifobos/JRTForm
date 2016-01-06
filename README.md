@@ -1,5 +1,5 @@
 # JRTForm
-JetForm is a tool that will help you build forms flexibly add custom blocks allowing validation and customize the error messages in validation, plus it lets you create sub-classes for customizing the appearance of different fields.
+JRTForm is a tool that will help you build forms flexibly add custom blocks allowing validation and customize the error messages in validation, plus it lets you create sub-classes for customizing the appearance of different fields.
 
 Installation
 -------------
