@@ -80,7 +80,7 @@
 {
     if (!self.externalNavigationController)
     {
-        UIBarButtonItem *dissmisButton          = [[UIBarButtonItem alloc] initWithTitle:@" ⌵ " style:UIBarButtonItemStylePlain target:self action:@selector(dismissModalAction)];
+        UIBarButtonItem *dissmisButton          = [[UIBarButtonItem alloc] initWithTitle:@" ﹀ " style:UIBarButtonItemStylePlain target:self action:@selector(dismissModalAction)];
         self.navigationItem.leftBarButtonItem   = dissmisButton;
     }
     [self.selectedIndexes removeAllObjects];
