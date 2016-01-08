@@ -36,6 +36,8 @@
 		315224B81B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224A01B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib */; };
 		315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */; };
 		315224BA1B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */; };
+		317C112D1C401716006DB1AA /* TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 317C112B1C401716006DB1AA /* TextFieldTableViewCell.xib */; };
+		317C112E1C401716006DB1AA /* TextFieldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 317C112C1C401716006DB1AA /* TextFieldTableViewCell.m */; };
 		319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319FAB101C3C701C00F46D83 /* JRTFormDatePickerViewController.m */; };
 		319FAB161C3C701C00F46D83 /* JRTFormDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */; };
 		319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */; };
@@ -105,6 +107,9 @@
 		315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormTextViewTableViewCell.m; sourceTree = "<group>"; };
 		315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormTextViewTableViewCell.xib; sourceTree = "<group>"; };
 		315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormValidationsBlocks.h; sourceTree = "<group>"; };
+		317C112A1C401716006DB1AA /* TextFieldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldTableViewCell.h; sourceTree = "<group>"; };
+		317C112B1C401716006DB1AA /* TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		317C112C1C401716006DB1AA /* TextFieldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldTableViewCell.m; sourceTree = "<group>"; };
 		319FAB0F1C3C701C00F46D83 /* JRTFormDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormDatePickerViewController.h; sourceTree = "<group>"; };
 		319FAB101C3C701C00F46D83 /* JRTFormDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormDatePickerViewController.m; sourceTree = "<group>"; };
 		319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormDatePickerViewController.xib; sourceTree = "<group>"; };
@@ -156,6 +161,7 @@
 				315224281B6AE0CA00FC23F4 /* JRTFormViewController.h */,
 				315224261B6AE0CA00FC23F4 /* JRTFormViewController.m */,
 				315224271B6AE0CA00FC23F4 /* JRTFormViewController.xib */,
+				317C11291C4016F6006DB1AA /* CustomField Example */,
 				315224041B6ADFD400FC23F4 /* AppDelegate.h */,
 				315224051B6ADFD400FC23F4 /* AppDelegate.m */,
 				3152240D1B6ADFD400FC23F4 /* Images.xcassets */,
@@ -334,6 +340,16 @@
 			name = TextView;
 			sourceTree = "<group>";
 		};
+		317C11291C4016F6006DB1AA /* CustomField Example */ = {
+			isa = PBXGroup;
+			children = (
+				317C112A1C401716006DB1AA /* TextFieldTableViewCell.h */,
+				317C112C1C401716006DB1AA /* TextFieldTableViewCell.m */,
+				317C112B1C401716006DB1AA /* TextFieldTableViewCell.xib */,
+			);
+			name = "CustomField Example";
+			sourceTree = "<group>";
+		};
 		319FAB0E1C3C6FC100F46D83 /* Date */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,6 +446,7 @@
 				315224B61B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.xib in Resources */,
 				315224B81B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib in Resources */,
 				319FAB181C3C701C00F46D83 /* JRTFormDateTableViewCell.xib in Resources */,
+				317C112D1C401716006DB1AA /* TextFieldTableViewCell.xib in Resources */,
 				315224AC1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib in Resources */,
 				315224B41B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.xib in Resources */,
 				315224BA1B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib in Resources */,
@@ -470,6 +487,7 @@
 				315224A51B6AF20100FC23F4 /* JRTFormActualViewController.m in Sources */,
 				315224A61B6AF20100FC23F4 /* JRTFormArrayValidations.m in Sources */,
 				315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */,
+				317C112E1C401716006DB1AA /* TextFieldTableViewCell.m in Sources */,
 				315224AB1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m in Sources */,
 				315224A71B6AF20100FC23F4 /* JRTFormBaseCell.m in Sources */,
 				319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */,

@@ -11,6 +11,7 @@
 #import "JRTFormValidationsBlocks.h"
 #import "JRTFormTableView.h"
 
+#import "TextFieldTableViewCell.h"
 
 NSString * const ktextField                     = @"textField";
 NSString * const ksecureTextField               = @"secureTextField";
@@ -36,6 +37,8 @@ NSString * const kmapField                      = @"mapField";
 @property (nonatomic, strong)JRTFormArrayValidations  * arrayValidationHelper;
 
 @property (nonatomic, readonly)JRTFormTableView *formTableView;
+
+@property (nonatomic, strong) TextFieldTableViewCell *customTextField;
 @end
 
 @implementation JRTFormViewController
@@ -243,33 +246,89 @@ NSString * const kmapField                      = @"mapField";
     return _submitButton;
 }
 
+
+#pragma mark - Custom Text Field
+
+- (TextFieldTableViewCell *)customTextField
+{
+    if (!_customTextField)
+    {
+        _customTextField = [self.formTableView formFieldCellWithNibName:@"TextFieldTableViewCell" andNameIdentifier:@"Custom"];
+        [_customTextField setReturnKeyType:UIReturnKeyDone];
+        [_customTextField setShouldReturn:^BOOL(UITextField *textField)
+         {
+             [textField endEditing:YES];
+             return NO;
+         }];
+        [_customTextField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate)
+         {
+             NSString *errorMessage          = nil;
+             if (!errorMessage) errorMessage = self.stringValidationHelper.required(stringToValidate);
+             if (!errorMessage) errorMessage = self.stringValidationHelper.alpha(stringToValidate);
+             if (!errorMessage) errorMessage = self.stringValidationHelper.maxLength(stringToValidate,8);
+             if (!errorMessage) errorMessage = self.stringValidationHelper.minLength(stringToValidate,3);
+             return errorMessage;
+         }];
+        [_customTextField setInitialLabelText:@"Initial Custosm Text"];
+    }
+    return _customTextField;
+
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 9;
+    return (section == 0)?9:1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-         if(indexPath.row == 0)     return self.textField;
-    else if(indexPath.row == 1)     return self.secureTextField;
-    else if(indexPath.row == 2)     return self.textViewField;
-    else if(indexPath.row == 3)     return self.selectOptionField;
-    else if(indexPath.row == 4)     return self.selectMultipleOptionField;
-    else if(indexPath.row == 5)     return self.switchField;
-    else if(indexPath.row == 6)     return self.dateField;
-    else if(indexPath.row == 7)     return self.mapField;
-    else
+    switch (indexPath.section)
     {
-        return self.submitButton;
+        case 0:
+        {
+            switch (indexPath.row)
+            {
+                case 0: return self.textField;
+                    break;
+                case 1: return self.secureTextField;
+                    break;
+                case 2: return self.textViewField;
+                    break;
+                case 3: return self.selectOptionField;
+                    break;
+                case 4: return self.selectMultipleOptionField;
+                    break;
+                case 5: return self.switchField;
+                    break;
+                case 6: return self.dateField;
+                    break;
+                case 7: return self.mapField;
+                    break;
+                case 8: return self.submitButton;
+                    break;
+                default:
+                    return nil;
+                    break;
+            }
+        }
+            break;
+        case 1:
+        {
+            return self.customTextField;
+        }
+            break;
+            
+        default:
+            return nil;
+            break;
     }
-
 }
 
 @end
