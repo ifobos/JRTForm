@@ -59,9 +59,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="label" destination="zIf-yC-vyu" id="LcL-Ek-weV"/>
-                <outlet property="roundedTextField" destination="EOH-ys-3Y1" id="uFX-Qr-7Wt"/>
-                <outlet property="textField" destination="EOH-ys-3Y1" id="GLA-pc-XXk"/>
+                <outlet property="label" destination="zIf-yC-vyu" id="nfz-Y7-byM"/>
+                <outlet property="textField" destination="EOH-ys-3Y1" id="Ewd-lx-a4W"/>
             </connections>
             <point key="canvasLocation" x="316" y="255"/>
         </tableViewCell>

@@ -9,7 +9,7 @@
 #import "TextFieldTableViewCell.h"
 
 @interface TextFieldTableViewCell ()
-@property (weak, nonatomic) IBOutlet UITextField    *roundedTextField;
+@property (weak, nonatomic) IBOutlet UITextField    *textField;
 @property (weak, nonatomic) IBOutlet UILabel        *label;
 
 @end
@@ -35,11 +35,11 @@
 {
     if (highlighted)
     {
-        self.roundedTextField.backgroundColor  = [UIColor lightGrayColor];
+        self.textField.backgroundColor  = [UIColor lightGrayColor];
     }
     else
     {
-        self.roundedTextField.backgroundColor  = [UIColor whiteColor];
+        self.textField.backgroundColor  = [UIColor whiteColor];
     }
 }
 
