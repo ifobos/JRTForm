@@ -143,7 +143,7 @@ NSString * const kmapField                      = @"mapField";
     if (!_selectOptionField)
     {
         _selectOptionField              = [self.formTableView formSelectTableViewCellWithName:kselectOptionField];
-        _selectOptionField.options      = @[@"Rojo", @"Azul", @"Verde", @"Naranja", @"Negro", @"Blanco", @"Gris"];
+        _selectOptionField.options      = @[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"];
         [_selectOptionField setSingleSelection:YES];
         [_selectOptionField setErrorMessageInValidationBlock:^NSString *(NSArray *arrayToValidate) {
         NSString *errorMessage          = nil;
@@ -159,7 +159,7 @@ NSString * const kmapField                      = @"mapField";
     if (!_selectMultipleOptionField)
     {
         _selectMultipleOptionField         = [self.formTableView formSelectTableViewCellWithName:kselectMultipleOptionField];
-        _selectMultipleOptionField.options = @[@"Rojo", @"Azul", @"Verde", @"Naranja", @"Negro", @"Blanco", @"Gris"];
+        _selectMultipleOptionField.options = @[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"];
         [_selectMultipleOptionField setSingleSelection:NO];
         [_selectMultipleOptionField setErrorMessageInValidationBlock:^NSString *(NSArray *arrayToValidate) {
         NSString *errorMessage             = nil;
