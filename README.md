@@ -4,7 +4,7 @@
 #### 1. Easily customize the appearance of the form fields.
   * By customizing a new xib corresponding to a new subclass of the appropriate field, which must contain sub-views required by the form field and outlets properly connected to the references of the parent class.
 
-![Image of Yaktocat](http://i.imgur.com/PBpySI3.png)
+![Demo](http://i.imgur.com/PBpySI3.png)
 
 
 #### 2. Introducing custom code to validate the value contained in the fields.
@@ -40,6 +40,10 @@
         }];
 
 ```
+####Each form field has 3 different states
+
+#### ____________Initial____________ ___________Invalid___________ ___________Valid____________
+![states](http://i.imgur.com/7BxBzfc.jpg)
 
 
 Installation
