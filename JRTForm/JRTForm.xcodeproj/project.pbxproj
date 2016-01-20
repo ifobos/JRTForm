@@ -22,9 +22,6 @@
 		315224AA1B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */; };
 		315224AB1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152248B1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m */; };
 		315224AC1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3152248C1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib */; };
-		315224AD1B6AF20100FC23F4 /* JRTFormRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152248E1B6AF20100FC23F4 /* JRTFormRoundedButton.m */; };
-		315224AE1B6AF20100FC23F4 /* JRTFormRoundedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224901B6AF20100FC23F4 /* JRTFormRoundedImageView.m */; };
-		315224AF1B6AF20100FC23F4 /* JRTFormRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224921B6AF20100FC23F4 /* JRTFormRoundedView.m */; };
 		315224B01B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */; };
 		315224B11B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */; };
 		315224B21B6AF20100FC23F4 /* JRTFormStringValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224971B6AF20100FC23F4 /* JRTFormStringValidations.m */; };
@@ -83,12 +80,6 @@
 		3152248A1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormOptionsTableViewController.h; sourceTree = "<group>"; };
 		3152248B1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormOptionsTableViewController.m; sourceTree = "<group>"; };
 		3152248C1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormOptionsTableViewController.xib; sourceTree = "<group>"; };
-		3152248D1B6AF20100FC23F4 /* JRTFormRoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormRoundedButton.h; sourceTree = "<group>"; };
-		3152248E1B6AF20100FC23F4 /* JRTFormRoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormRoundedButton.m; sourceTree = "<group>"; };
-		3152248F1B6AF20100FC23F4 /* JRTFormRoundedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormRoundedImageView.h; sourceTree = "<group>"; };
-		315224901B6AF20100FC23F4 /* JRTFormRoundedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormRoundedImageView.m; sourceTree = "<group>"; };
-		315224911B6AF20100FC23F4 /* JRTFormRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormRoundedView.h; sourceTree = "<group>"; };
-		315224921B6AF20100FC23F4 /* JRTFormRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormRoundedView.m; sourceTree = "<group>"; };
 		315224931B6AF20100FC23F4 /* JRTFormSelectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormSelectTableViewCell.h; sourceTree = "<group>"; };
 		315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormSelectTableViewCell.m; sourceTree = "<group>"; };
 		315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormSelectTableViewCell.xib; sourceTree = "<group>"; };
@@ -200,7 +191,6 @@
 		3152247D1B6AF20100FC23F4 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
-				315224C21B6BDD7700FC23F4 /* Views */,
 				315224BF1B6BDD1800FC23F4 /* TableView */,
 				315224BD1B6BDCCE00FC23F4 /* Validation */,
 				315224BC1B6BDCAD00FC23F4 /* Helpers */,
@@ -285,19 +275,6 @@
 				3152248C1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib */,
 			);
 			name = Select;
-			sourceTree = "<group>";
-		};
-		315224C21B6BDD7700FC23F4 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				3152248D1B6AF20100FC23F4 /* JRTFormRoundedButton.h */,
-				3152248E1B6AF20100FC23F4 /* JRTFormRoundedButton.m */,
-				3152248F1B6AF20100FC23F4 /* JRTFormRoundedImageView.h */,
-				315224901B6AF20100FC23F4 /* JRTFormRoundedImageView.m */,
-				315224911B6AF20100FC23F4 /* JRTFormRoundedView.h */,
-				315224921B6AF20100FC23F4 /* JRTFormRoundedView.m */,
-			);
-			name = Views;
 			sourceTree = "<group>";
 		};
 		315224C31B6BDEBB00FC23F4 /* Submit */ = {
@@ -473,12 +450,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				315224AE1B6AF20100FC23F4 /* JRTFormRoundedImageView.m in Sources */,
 				315224061B6ADFD400FC23F4 /* AppDelegate.m in Sources */,
 				315224A91B6AF20100FC23F4 /* JRTFormMapTableViewCell.m in Sources */,
-				315224AF1B6AF20100FC23F4 /* JRTFormRoundedView.m in Sources */,
 				315224B21B6AF20100FC23F4 /* JRTFormStringValidations.m in Sources */,
-				315224AD1B6AF20100FC23F4 /* JRTFormRoundedButton.m in Sources */,
 				319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */,
 				315224A81B6AF20100FC23F4 /* JRTFormTableView.m in Sources */,
 				315224B71B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.m in Sources */,
