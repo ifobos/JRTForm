@@ -148,16 +148,16 @@
 		315223FF1B6ADFD400FC23F4 /* JRTForm */ = {
 			isa = PBXGroup;
 			children = (
-				3152247D1B6AF20100FC23F4 /* PodFiles */,
-				315224281B6AE0CA00FC23F4 /* JRTFormViewController.h */,
-				315224261B6AE0CA00FC23F4 /* JRTFormViewController.m */,
-				315224271B6AE0CA00FC23F4 /* JRTFormViewController.xib */,
 				317C11291C4016F6006DB1AA /* CustomField Example */,
+				3152247D1B6AF20100FC23F4 /* PodFiles */,
+				315224001B6ADFD400FC23F4 /* Supporting Files */,
 				315224041B6ADFD400FC23F4 /* AppDelegate.h */,
 				315224051B6ADFD400FC23F4 /* AppDelegate.m */,
 				3152240D1B6ADFD400FC23F4 /* Images.xcassets */,
+				315224281B6AE0CA00FC23F4 /* JRTFormViewController.h */,
+				315224261B6AE0CA00FC23F4 /* JRTFormViewController.m */,
+				315224271B6AE0CA00FC23F4 /* JRTFormViewController.xib */,
 				3152240F1B6ADFD400FC23F4 /* LaunchScreen.xib */,
-				315224001B6ADFD400FC23F4 /* Supporting Files */,
 			);
 			path = JRTForm;
 			sourceTree = "<group>";
@@ -168,14 +168,14 @@
 				315224011B6ADFD400FC23F4 /* Info.plist */,
 				315224021B6ADFD400FC23F4 /* main.m */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		315224191B6ADFD400FC23F4 /* JRTFormTests */ = {
 			isa = PBXGroup;
 			children = (
-				3152241C1B6ADFD400FC23F4 /* JRTFormTests.m */,
 				3152241A1B6ADFD400FC23F4 /* Supporting Files */,
+				3152241C1B6ADFD400FC23F4 /* JRTFormTests.m */,
 			);
 			path = JRTFormTests;
 			sourceTree = "<group>";
@@ -185,16 +185,16 @@
 			children = (
 				3152241B1B6ADFD400FC23F4 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		3152247D1B6AF20100FC23F4 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
+				315224BB1B6BDC9400FC23F4 /* Fields */,
+				315224BC1B6BDCAD00FC23F4 /* Helpers */,
 				315224BF1B6BDD1800FC23F4 /* TableView */,
 				315224BD1B6BDCCE00FC23F4 /* Validation */,
-				315224BC1B6BDCAD00FC23F4 /* Helpers */,
-				315224BB1B6BDC9400FC23F4 /* Fields */,
 			);
 			path = PodFiles;
 			sourceTree = "<group>";
@@ -202,17 +202,17 @@
 		315224BB1B6BDC9400FC23F4 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
-				315224C61B6BDF3600FC23F4 /* TextView */,
-				315224C51B6BDF1300FC23F4 /* TextField */,
-				315224C41B6BDEE600FC23F4 /* Switch */,
-				315224C31B6BDEBB00FC23F4 /* Submit */,
-				315224C11B6BDD5200FC23F4 /* Select */,
+				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
 				319FAB0E1C3C6FC100F46D83 /* Date */,
 				315224C01B6BDD3600FC23F4 /* Map */,
-				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
+				315224C11B6BDD5200FC23F4 /* Select */,
+				315224C31B6BDEBB00FC23F4 /* Submit */,
+				315224C41B6BDEE600FC23F4 /* Switch */,
+				315224C51B6BDF1300FC23F4 /* TextField */,
+				315224C61B6BDF3600FC23F4 /* TextView */,
 				315224841B6AF20100FC23F4 /* JRTFormFieldCells.h */,
 			);
-			name = Fields;
+			path = Fields;
 			sourceTree = "<group>";
 		};
 		315224BC1B6BDCAD00FC23F4 /* Helpers */ = {
@@ -221,19 +221,19 @@
 				3152247E1B6AF20100FC23F4 /* JRTFormActualViewController.h */,
 				3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */,
 			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		315224BD1B6BDCCE00FC23F4 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
-				315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */,
-				315224961B6AF20100FC23F4 /* JRTFormStringValidations.h */,
-				315224971B6AF20100FC23F4 /* JRTFormStringValidations.m */,
 				315224801B6AF20100FC23F4 /* JRTFormArrayValidations.h */,
 				315224811B6AF20100FC23F4 /* JRTFormArrayValidations.m */,
+				315224961B6AF20100FC23F4 /* JRTFormStringValidations.h */,
+				315224971B6AF20100FC23F4 /* JRTFormStringValidations.m */,
+				315224A41B6AF20100FC23F4 /* JRTFormValidationsBlocks.h */,
 			);
-			name = Validation;
+			path = Validation;
 			sourceTree = "<group>";
 		};
 		315224BE1B6BDCFE00FC23F4 /* BaseCell */ = {
@@ -242,7 +242,7 @@
 				315224821B6AF20100FC23F4 /* JRTFormBaseCell.h */,
 				315224831B6AF20100FC23F4 /* JRTFormBaseCell.m */,
 			);
-			name = BaseCell;
+			path = BaseCell;
 			sourceTree = "<group>";
 		};
 		315224BF1B6BDD1800FC23F4 /* TableView */ = {
@@ -251,7 +251,7 @@
 				315224851B6AF20100FC23F4 /* JRTFormTableView.h */,
 				315224861B6AF20100FC23F4 /* JRTFormTableView.m */,
 			);
-			name = TableView;
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		315224C01B6BDD3600FC23F4 /* Map */ = {
@@ -261,20 +261,20 @@
 				315224881B6AF20100FC23F4 /* JRTFormMapTableViewCell.m */,
 				315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */,
 			);
-			name = Map;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		315224C11B6BDD5200FC23F4 /* Select */ = {
 			isa = PBXGroup;
 			children = (
-				315224931B6AF20100FC23F4 /* JRTFormSelectTableViewCell.h */,
-				315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */,
-				315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */,
 				3152248A1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.h */,
 				3152248B1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.m */,
 				3152248C1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib */,
+				315224931B6AF20100FC23F4 /* JRTFormSelectTableViewCell.h */,
+				315224941B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m */,
+				315224951B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib */,
 			);
-			name = Select;
+			path = Select;
 			sourceTree = "<group>";
 		};
 		315224C31B6BDEBB00FC23F4 /* Submit */ = {
@@ -284,7 +284,7 @@
 				315224991B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.m */,
 				3152249A1B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.xib */,
 			);
-			name = Submit;
+			path = Submit;
 			sourceTree = "<group>";
 		};
 		315224C41B6BDEE600FC23F4 /* Switch */ = {
@@ -294,7 +294,7 @@
 				3152249C1B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.m */,
 				3152249D1B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.xib */,
 			);
-			name = Switch;
+			path = Switch;
 			sourceTree = "<group>";
 		};
 		315224C51B6BDF1300FC23F4 /* TextField */ = {
@@ -304,7 +304,7 @@
 				3152249F1B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.m */,
 				315224A01B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib */,
 			);
-			name = TextField;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		315224C61B6BDF3600FC23F4 /* TextView */ = {
@@ -314,7 +314,7 @@
 				315224A21B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m */,
 				315224A31B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib */,
 			);
-			name = TextView;
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		317C11291C4016F6006DB1AA /* CustomField Example */ = {
@@ -324,7 +324,7 @@
 				317C112C1C401716006DB1AA /* TextFieldTableViewCell.m */,
 				317C112B1C401716006DB1AA /* TextFieldTableViewCell.xib */,
 			);
-			name = "CustomField Example";
+			path = "CustomField Example";
 			sourceTree = "<group>";
 		};
 		319FAB0E1C3C6FC100F46D83 /* Date */ = {
@@ -337,7 +337,7 @@
 				319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */,
 				319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */,
 			);
-			name = Date;
+			path = Date;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -496,6 +496,7 @@
 				315224101B6ADFD400FC23F4 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -588,7 +589,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = JRTForm/Info.plist;
+				INFOPLIST_FILE = "JRTForm/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -603,7 +604,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = JRTForm/Info.plist;
+				INFOPLIST_FILE = "JRTForm/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,7 +625,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = JRTFormTests/Info.plist;
+				INFOPLIST_FILE = "JRTFormTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -640,7 +641,7 @@
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = JRTFormTests/Info.plist;
+				INFOPLIST_FILE = "JRTFormTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jerti.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

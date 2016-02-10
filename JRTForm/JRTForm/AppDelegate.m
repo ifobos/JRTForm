@@ -14,9 +14,10 @@
 
 @implementation AppDelegate
 
--(UIWindow *)window
-{
-    if (!_window) _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+- (UIWindow *)window {
+    if (!_window) {
+        _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    }
     return _window;
 }
 
