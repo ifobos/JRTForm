@@ -18,28 +18,19 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-#import "JRTFormDatePickerViewController.h"
-#import "JRTFormActualViewController.h"
+@import UIKit;
+@import MapKit;
 
-@interface JRTFormDatePickerViewController ()
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+#import "JRTFormModalBaseViewController.h"
+
+@protocol JRTMapPickerViewControllerDelegate
+
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+
 @end
 
-@implementation JRTFormDatePickerViewController
+@interface JRTFormMapPickerViewController : JRTFormModalBaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.titleLabel.text = self.title;
-}
-
-- (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)done:(id)sender {
-    self.delegate.date = self.datePicker.date;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+@property (nonatomic, strong) id<JRTMapPickerViewControllerDelegate> delegate;
 
 @end

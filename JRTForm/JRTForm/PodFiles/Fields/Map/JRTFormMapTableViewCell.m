@@ -19,49 +19,38 @@
 //THE SOFTWARE.
 
 #import "JRTFormMapTableViewCell.h"
+#import "JRTFormMapPickerViewController.h"
 
 NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
 
-@interface JRTFormMapTableViewCell () <MKMapViewDelegate>
+@interface JRTFormMapTableViewCell () <JRTMapPickerViewControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UIView *mapContainer;
-@property (weak, nonatomic) MKMapView *mapView;
+@property (strong, nonatomic) IBOutlet UILabel *label;
+@property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
+@property (strong, nonatomic) IBOutlet UILabel *textSelectedLabel;
+@property (nonatomic, strong) UIColor *labelColor;
+@property (nonatomic) BOOL hideableLabel;
+
 @property (nonatomic, copy) NSString * (^errorMessageInValidationBlock)(CLLocationCoordinate2D locationCoordinate);
 
 @end
 
 @implementation JRTFormMapTableViewCell
 
-+ (MKMapView *)sharedInstance {
-    static dispatch_once_t once;
-    static MKMapView *sharedInstance;
-    
-    dispatch_once(&once, ^{
-        sharedInstance = [MKMapView new];
-    });
-    
-    return sharedInstance;
-}
-
-- (MKMapView *)mapView {
-    if (!_mapView) {
-        _mapView = [JRTFormMapTableViewCell sharedInstance];
-        MKCoordinateRegion worldRegion = MKCoordinateRegionForMapRect(MKMapRectWorld);
-        [_mapView setRegion:worldRegion animated:NO];
-        if ([_mapView.annotations count] > 0) {
-            [_mapView removeAnnotations:_mapView.annotations];
-        }
-        [_mapView removeConstraints:_mapView.constraints];
-    }
-    return _mapView;
-}
-
 @synthesize name = _name;
 - (void)setName:(NSString *)name {
     _name = name;
+    self.placeholderLabel.text = name;
     self.label.text = name;
 }
+
+- (void)setCoordinate:(CLLocationCoordinate2D)coordinate {
+    _coordinate = coordinate;
+    self.textSelectedLabel.text = [NSString stringWithFormat:@" Lat: %f Lon: %f ", coordinate.latitude, coordinate.longitude];
+    [self updateStyle];
+}
+
+#pragma mark - Getters
 
 - (BOOL)isValid {
     BOOL valid = YES;
@@ -74,93 +63,77 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
     return valid;
 }
 
-@synthesize coordinate = _coordinate;
-- (CLLocationCoordinate2D)coordinate {
-    if ([self.mapView.annotations count] == 1) {
-        MKPointAnnotation *anotation = [self.mapView.annotations firstObject];
-        _coordinate = anotation.coordinate;
-    }
-    return _coordinate;
-}
+#pragma mark - View
 
-- (void)setCoordinate:(CLLocationCoordinate2D)coordinate {
-    _coordinate = coordinate;
-    [self addAnotationForCoordinate:_coordinate];
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    self.hideableLabel = self.label.hidden;
+    self.labelColor = self.label.textColor;
 }
 
 #pragma mark - styles
 
 - (void)setDefaultStyle {
-    self.label.textColor = [UIColor darkGrayColor];
-    self.label.hidden = NO;
+    if (self.labelColor) {
+        self.label.textColor = self.labelColor;
+    }
     self.label.text = self.name;
+    self.placeholderLabel.hidden = YES;
+    self.textSelectedLabel.hidden = NO;
+    if (self.hideableLabel) {
+        self.label.hidden = NO;
+    }
+}
+
+- (void)setEmptyStyle {
+    if (self.labelColor) {
+        self.label.textColor = self.labelColor;
+    }
+    self.label.text = self.name;
+    self.placeholderLabel.hidden = NO;
+    self.textSelectedLabel.hidden = YES;
+    if (self.hideableLabel) {
+        self.label.hidden = YES;
+    }
 }
 
 - (void)setErrorStyleWithMessage:(NSString *)errorMessage {
-    self.label.textColor = [UIColor redColor];
-    self.label.hidden = NO;
+    if (self.labelColor) {
+        self.label.textColor = [UIColor redColor];
+    }
     self.label.text = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
+    self.textSelectedLabel.hidden = ([self.textSelectedLabel.text length] == 0);
+    self.placeholderLabel.hidden = !self.textSelectedLabel.hidden;
+    if (self.hideableLabel) {
+        self.label.hidden = NO;
+    }
 }
 
 - (void)updateStyle {
     if (!self.isValid) {
         [self setErrorStyleWithMessage:self.errorMessageInValidationBlock(self.coordinate)];
     }
-    else {
+    else if (self.coordinate.latitude != 0 && self.coordinate.longitude != 0) {
         [self setDefaultStyle];
     }
-}
-
-#pragma mark - View
-
-- (void)didMoveToSuperview {
-    [super didMoveToSuperview];
-    self.mapView.delegate = self;
-    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(addAnotationFromGesture:)];
-    gesture.minimumPressDuration = 1.0;
-    [self.mapView addGestureRecognizer:gesture];
-    [self showMapView];
-}
-
-- (void)showMapView {
-    self.mapView.frame = self.mapContainer.bounds;
-    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    
-    [self.mapContainer addSubview:self.mapView];
-}
-
-- (void)addAnotationFromGesture:(UIGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state != UIGestureRecognizerStateBegan) {
-        return;
+    else {
+        [self setEmptyStyle];
     }
-    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
-    CLLocationCoordinate2D coordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
-    [self addAnotationForCoordinate:coordinate];
 }
 
-- (void)addAnotationForCoordinate:(CLLocationCoordinate2D)coordinate {
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    MKPointAnnotation *anotation = [[MKPointAnnotation alloc] init];
-    anotation.coordinate = coordinate;
-    [self.mapView addAnnotation:anotation];
-    [self.mapView
-     setRegion:[self.mapView regionThatFits:MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.005, 0.005))]
-      animated:YES];
-    [self updateStyle];
+#pragma mark - MapPicker
+
+- (void)displayMapPicker {
+    JRTFormMapPickerViewController *mapPickerViewController = [JRTFormMapPickerViewController new];
+    mapPickerViewController.delegate = self;
+    mapPickerViewController.title = self.name;
+    [mapPickerViewController show];
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
-    MKPinAnnotationView *pinView = nil;
-    if (annotation != mapView.userLocation) {
-        static NSString *defaultPin = @"pinIdentifier";
-        pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:defaultPin];
-        if (pinView == nil) {
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:defaultPin];
-        }
-        pinView.draggable = YES;
-        pinView.animatesDrop = YES;
-    }
-    return pinView;
+#pragma mark - Actions
+
+- (IBAction)touchUpInside:(id)sender {
+    [self displayMapPicker];
 }
 
 @end

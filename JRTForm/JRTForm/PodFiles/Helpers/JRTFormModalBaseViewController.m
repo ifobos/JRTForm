@@ -18,28 +18,46 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-#import "JRTFormDatePickerViewController.h"
-#import "JRTFormActualViewController.h"
+#import "JRTFormModalBaseViewController.h"
 
-@interface JRTFormDatePickerViewController ()
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@interface JRTFormModalBaseViewController ()
+
 @end
 
-@implementation JRTFormDatePickerViewController
+@implementation JRTFormModalBaseViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.titleLabel.text = self.title;
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
-- (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (instancetype)initWithCoder:(NSCoder *)coder {
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
 }
 
-- (IBAction)done:(id)sender {
-    self.delegate.date = self.datePicker.date;
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    self.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+}
+
+- (void)show {
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [viewController presentViewController:self animated:YES completion:nil];
 }
 
 @end

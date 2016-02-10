@@ -19,13 +19,29 @@
 //THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
+#import "JRTFormModalBaseViewController.h"
 
+/*!
+ Protocol that should conform the delegate has the date picker, the delegate 
+ receives the captured date.
+ */
 @protocol JRTDatePickerViewControllerDelegate
+
+/*!
+ Property to which is assigned the date captured with datepicker.
+ */
 @property (nonatomic, strong) NSDate *date;
+
 @end
 
-@interface JRTFormDatePickerViewController : UIViewController
-@property (nonatomic, strong) id<JRTDatePickerViewControllerDelegate> asignatedDelegate;
+/*!
+ Class presented modally one picker to a date.
+ */
+@interface JRTFormDatePickerViewController : JRTFormModalBaseViewController
 
-- (void)show;
+/*!
+ Property to assign the delegate of datepicker
+ */
+@property (nonatomic, strong) id<JRTDatePickerViewControllerDelegate> delegate;
+
 @end

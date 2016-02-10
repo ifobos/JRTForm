@@ -18,28 +18,8 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-#import "JRTFormDatePickerViewController.h"
-#import "JRTFormActualViewController.h"
+#import <UIKit/UIKit.h>
 
-@interface JRTFormDatePickerViewController ()
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@end
-
-@implementation JRTFormDatePickerViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.titleLabel.text = self.title;
-}
-
-- (IBAction)cancel:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)done:(id)sender {
-    self.delegate.date = self.datePicker.date;
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
+@interface JRTFormModalBaseViewController : UIViewController
+- (void)show;
 @end

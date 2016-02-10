@@ -39,6 +39,9 @@
 		319FAB161C3C701C00F46D83 /* JRTFormDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319FAB111C3C701C00F46D83 /* JRTFormDatePickerViewController.xib */; };
 		319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */; };
 		319FAB181C3C701C00F46D83 /* JRTFormDateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */; };
+		31A542901C6BCA2300AB11CE /* JRTFormModalBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A5428F1C6BCA2300AB11CE /* JRTFormModalBaseViewController.m */; };
+		31A542941C6BD65500AB11CE /* JRTFormMapPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A542921C6BD65500AB11CE /* JRTFormMapPickerViewController.m */; };
+		31A542951C6BD65500AB11CE /* JRTFormMapPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A542931C6BD65500AB11CE /* JRTFormMapPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +110,11 @@
 		319FAB121C3C701C00F46D83 /* JRTFormDateTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormDateTableViewCell.h; sourceTree = "<group>"; };
 		319FAB131C3C701C00F46D83 /* JRTFormDateTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormDateTableViewCell.m; sourceTree = "<group>"; };
 		319FAB141C3C701C00F46D83 /* JRTFormDateTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormDateTableViewCell.xib; sourceTree = "<group>"; };
+		31A5428E1C6BCA2300AB11CE /* JRTFormModalBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormModalBaseViewController.h; sourceTree = "<group>"; };
+		31A5428F1C6BCA2300AB11CE /* JRTFormModalBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormModalBaseViewController.m; sourceTree = "<group>"; };
+		31A542911C6BD65500AB11CE /* JRTFormMapPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormMapPickerViewController.h; sourceTree = "<group>"; };
+		31A542921C6BD65500AB11CE /* JRTFormMapPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormMapPickerViewController.m; sourceTree = "<group>"; };
+		31A542931C6BD65500AB11CE /* JRTFormMapPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormMapPickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +228,8 @@
 			children = (
 				3152247E1B6AF20100FC23F4 /* JRTFormActualViewController.h */,
 				3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */,
+				31A5428E1C6BCA2300AB11CE /* JRTFormModalBaseViewController.h */,
+				31A5428F1C6BCA2300AB11CE /* JRTFormModalBaseViewController.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -260,6 +270,9 @@
 				315224871B6AF20100FC23F4 /* JRTFormMapTableViewCell.h */,
 				315224881B6AF20100FC23F4 /* JRTFormMapTableViewCell.m */,
 				315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */,
+				31A542911C6BD65500AB11CE /* JRTFormMapPickerViewController.h */,
+				31A542921C6BD65500AB11CE /* JRTFormMapPickerViewController.m */,
+				31A542931C6BD65500AB11CE /* JRTFormMapPickerViewController.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -424,6 +437,7 @@
 				315224B81B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.xib in Resources */,
 				319FAB181C3C701C00F46D83 /* JRTFormDateTableViewCell.xib in Resources */,
 				317C112D1C401716006DB1AA /* TextFieldTableViewCell.xib in Resources */,
+				31A542951C6BD65500AB11CE /* JRTFormMapPickerViewController.xib in Resources */,
 				315224AC1B6AF20100FC23F4 /* JRTFormOptionsTableViewController.xib in Resources */,
 				315224B41B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.xib in Resources */,
 				315224BA1B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.xib in Resources */,
@@ -453,6 +467,8 @@
 				315224061B6ADFD400FC23F4 /* AppDelegate.m in Sources */,
 				315224A91B6AF20100FC23F4 /* JRTFormMapTableViewCell.m in Sources */,
 				315224B21B6AF20100FC23F4 /* JRTFormStringValidations.m in Sources */,
+				31A542901C6BCA2300AB11CE /* JRTFormModalBaseViewController.m in Sources */,
+				31A542941C6BD65500AB11CE /* JRTFormMapPickerViewController.m in Sources */,
 				319FAB171C3C701C00F46D83 /* JRTFormDateTableViewCell.m in Sources */,
 				315224A81B6AF20100FC23F4 /* JRTFormTableView.m in Sources */,
 				315224B71B6AF20100FC23F4 /* JRTFormTextFieldTableViewCell.m in Sources */,

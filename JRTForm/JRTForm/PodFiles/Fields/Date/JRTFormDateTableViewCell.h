@@ -21,17 +21,46 @@
 @import UIKit;
 #import "JRTFormBaseCell.h"
 
+/*!
+ Class name and the nib of the cell.
+ */
 extern NSString *const kJRTFormFieldDateTableViewCell;
 
+/*!
+ Cell having a form field to catch a date.
+ */
 @interface JRTFormDateTableViewCell : JRTFormBaseCell
 
-@property (nonatomic, readonly) NSDate *date;
+/*!
+ Property that contains the date captured
+ */
+@property (nonatomic, strong) NSDate *date;
 
+/*!
+ Receiving the block method validation for date captured.
+ 
+ @param errorMessageInValidationBlock block must validate the date received and
+                                      returns an error message if the received 
+                                      date is valid returns nil.
+ */
 - (void)setErrorMessageInValidationBlock:(NSString *(^)(NSDate *dateToValidate))errorMessageInValidationBlock;
 
+/*!
+ Method that sets the default appearance with valid data.
+ */
 - (void)setDefaultStyle;
-- (void)setEmptyStyle;
-- (void)setErrorStyleWithMessage:(NSString *)errorMessage;
 
+/*!
+ Method that sets the empty appearance.
+ */
+- (void)setEmptyStyle;
+
+/*!
+ Method that sets the error appearance.
+ 
+ @param errorMessage String which is concatenated to the name of the field and 
+                     explaining the error happened.
+ */
+- (void)setErrorStyleWithMessage:(NSString *)errorMessage;
 
 @end

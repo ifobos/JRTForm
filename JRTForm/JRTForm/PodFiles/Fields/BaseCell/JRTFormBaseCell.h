@@ -19,10 +19,34 @@
 //THE SOFTWARE.
 
 @import UIKit;
-
+/*!
+ Base class which depend on the different available cells.
+ */
 @interface JRTFormBaseCell : UITableViewCell
+
+/*!
+ Boolean property read-only indicating whether the contents of the cell is 
+ valid according to block validation provided by default does not have.
+ validation rules and returns YES.
+ */
 @property (nonatomic, readonly) BOOL isValid;
+
+/*!
+ Property that contains the name of the field representing the cell.
+ */
 @property (nonatomic, strong) NSString *name;
+
+/*!
+ Method which seeks UITableView in which the cell is contained.
+ 
+ @return Table view in which the cell is contained.
+ */
 - (UITableView *)superTableView;
+
+/*!
+ Method which according to the validity of the cell contents changes the 
+ appearance of the cell to make it consistent with the content.
+ */
 - (void)updateStyle;
+
 @end

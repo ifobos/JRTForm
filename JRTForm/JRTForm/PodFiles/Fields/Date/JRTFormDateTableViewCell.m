@@ -131,7 +131,8 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
 
 - (void)displayDatePicker {
     JRTFormDatePickerViewController *datePickerViewController = [JRTFormDatePickerViewController new];
-    datePickerViewController.asignatedDelegate = self;
+    datePickerViewController.delegate = self;
+    datePickerViewController.title = self.name;
     [datePickerViewController show];
 }
 
