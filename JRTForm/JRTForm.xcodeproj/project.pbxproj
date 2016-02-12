@@ -14,7 +14,6 @@
 		3152241D1B6ADFD400FC23F4 /* JRTFormTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152241C1B6ADFD400FC23F4 /* JRTFormTests.m */; };
 		315224291B6AE0CA00FC23F4 /* JRTFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224261B6AE0CA00FC23F4 /* JRTFormViewController.m */; };
 		3152242A1B6AE0CA00FC23F4 /* JRTFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315224271B6AE0CA00FC23F4 /* JRTFormViewController.xib */; };
-		315224A51B6AF20100FC23F4 /* JRTFormActualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */; };
 		315224A61B6AF20100FC23F4 /* JRTFormArrayValidations.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224811B6AF20100FC23F4 /* JRTFormArrayValidations.m */; };
 		315224A71B6AF20100FC23F4 /* JRTFormBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224831B6AF20100FC23F4 /* JRTFormBaseCell.m */; };
 		315224A81B6AF20100FC23F4 /* JRTFormTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224861B6AF20100FC23F4 /* JRTFormTableView.m */; };
@@ -68,8 +67,6 @@
 		315224261B6AE0CA00FC23F4 /* JRTFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormViewController.m; sourceTree = "<group>"; };
 		315224271B6AE0CA00FC23F4 /* JRTFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormViewController.xib; sourceTree = "<group>"; };
 		315224281B6AE0CA00FC23F4 /* JRTFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormViewController.h; sourceTree = "<group>"; };
-		3152247E1B6AF20100FC23F4 /* JRTFormActualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormActualViewController.h; sourceTree = "<group>"; };
-		3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormActualViewController.m; sourceTree = "<group>"; };
 		315224801B6AF20100FC23F4 /* JRTFormArrayValidations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormArrayValidations.h; sourceTree = "<group>"; };
 		315224811B6AF20100FC23F4 /* JRTFormArrayValidations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormArrayValidations.m; sourceTree = "<group>"; };
 		315224821B6AF20100FC23F4 /* JRTFormBaseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormBaseCell.h; sourceTree = "<group>"; };
@@ -226,8 +223,6 @@
 		315224BC1B6BDCAD00FC23F4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3152247E1B6AF20100FC23F4 /* JRTFormActualViewController.h */,
-				3152247F1B6AF20100FC23F4 /* JRTFormActualViewController.m */,
 				31A5428E1C6BCA2300AB11CE /* JRTFormModalBaseViewController.h */,
 				31A5428F1C6BCA2300AB11CE /* JRTFormModalBaseViewController.m */,
 			);
@@ -475,7 +470,6 @@
 				31A542991C6D219300AB11CE /* JRTFormSelectPickerViewController.m in Sources */,
 				315224B01B6AF20100FC23F4 /* JRTFormSelectTableViewCell.m in Sources */,
 				315224B51B6AF20100FC23F4 /* JRTFormSwitchTableViewCell.m in Sources */,
-				315224A51B6AF20100FC23F4 /* JRTFormActualViewController.m in Sources */,
 				315224A61B6AF20100FC23F4 /* JRTFormArrayValidations.m in Sources */,
 				315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */,
 				317C112E1C401716006DB1AA /* TextFieldTableViewCell.m in Sources */,
