@@ -18,19 +18,19 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-#import "JRTFormOptionsTableViewController.h"
+#import "JRTFormSelectPickerViewController.h"
 #import "JRTFormSelectTableViewCell.h"
-#import "JRTFormActualViewController.h"
 
-@interface JRTFormOptionsTableViewController ()
+@interface JRTFormSelectPickerViewController ()<UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic) BOOL externalNavigationController;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSMutableArray *selectedIndexes;
+@property (weak, nonatomic) IBOutlet UITableView *optionsTableView;
 
 @end
 
-@implementation JRTFormOptionsTableViewController
+@implementation JRTFormSelectPickerViewController
 
 #pragma mark - Getters
 
@@ -41,23 +41,6 @@
     return _selectedIndexes;
 }
 
-#pragma mark - Presenter
-
-- (void)show {
-    UIViewController *viewController = [JRTFormActualViewController actualViewController];
-    
-    if (viewController.navigationController) {
-        self.externalNavigationController = YES;
-        [viewController.navigationController pushViewController:self animated:YES];
-    }
-    else {
-        self.externalNavigationController = NO;
-        UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self];
-        navigationController.modalPresentationStyle = UIModalPresentationCurrentContext;
-        [viewController presentViewController:navigationController animated:YES completion:nil];
-    }
-}
-
 #pragma mark - ViewController
 
 - (void)viewDidLoad {
@@ -65,26 +48,11 @@
     [self setUp];
 }
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    self.asignatedDelegate.selectedIndexes = self.selectedIndexes;
-}
-
-#pragma mark - setUp
-
 - (void)setUp {
-    if (!self.externalNavigationController) {
-        UIBarButtonItem *dissmisButton = [[UIBarButtonItem alloc] initWithTitle:@" ﹀ " style:UIBarButtonItemStylePlain target:self action:@selector(dismissModalAction)];
-        self.navigationItem.leftBarButtonItem = dissmisButton;
-    }
+    self.titleLabel.text = self.title;
+    self.optionsTableView.tableFooterView = [UIView new];
     [self.selectedIndexes removeAllObjects];
-    [self.selectedIndexes addObjectsFromArray:self.asignatedDelegate.selectedIndexes];
-}
-
-#pragma mark - Navigation
-
-- (void)dismissModalAction {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.selectedIndexes addObjectsFromArray:self.delegate.selectedIndexes];
 }
 
 #pragma mark - TableViewController
@@ -94,7 +62,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.asignatedDelegate.options count];
+    return [self.delegate.options count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -103,7 +71,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    cell.textLabel.text = [self.asignatedDelegate.options objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.delegate.options objectAtIndex:indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if ([self.selectedIndexes indexOfObject:@(indexPath.row)] != NSNotFound) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -133,4 +101,14 @@
     }
 }
 
+#pragma mark - Actions
+
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)done:(id)sender {
+    self.delegate.selectedIndexes = self.selectedIndexes;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

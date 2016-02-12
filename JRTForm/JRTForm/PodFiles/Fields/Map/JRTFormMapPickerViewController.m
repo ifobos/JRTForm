@@ -22,6 +22,7 @@
 
 @interface JRTFormMapPickerViewController () <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *mapContainer;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) MKMapView *mapView;
 @end
 
@@ -56,6 +57,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.titleLabel.text = self.title;
     self.mapView.delegate = self;
     UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(addAnotationFromGesture:)];
     gesture.minimumPressDuration = 1.0;

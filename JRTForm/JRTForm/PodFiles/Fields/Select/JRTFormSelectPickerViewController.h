@@ -18,14 +18,15 @@
 //OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //THE SOFTWARE.
 
-@import UIKit;
-@protocol JRTOptionsTableViewControllerDelegate
+#import <UIKit/UIKit.h>
+#import "JRTFormModalBaseViewController.h"
+
+@protocol JRTFormSelectPickerViewControllerDelegate
 @property (nonatomic, strong) NSArray *options;
 @property (nonatomic, strong) NSArray *selectedIndexes;
 @end
 
-@interface JRTFormOptionsTableViewController : UITableViewController
-@property (nonatomic, strong) id<JRTOptionsTableViewControllerDelegate> asignatedDelegate;
+@interface JRTFormSelectPickerViewController : JRTFormModalBaseViewController
+@property (nonatomic, strong) id<JRTFormSelectPickerViewControllerDelegate> delegate;
 @property (nonatomic) BOOL singleSelection;
-- (void)show;
 @end

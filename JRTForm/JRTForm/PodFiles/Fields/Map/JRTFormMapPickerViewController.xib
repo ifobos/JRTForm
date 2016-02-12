@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JRTFormMapPickerViewController">
             <connections>
                 <outlet property="mapContainer" destination="unu-37-1HO" id="Hil-40-IF3"/>
+                <outlet property="titleLabel" destination="YtG-Ss-wNP" id="TEZ-xD-hkV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,7 +34,7 @@
                                 <action selector="cancel:" destination="-1" eventType="touchUpInside" id="z2i-73-mPT"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YtG-Ss-wNP">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YtG-Ss-wNP">
                             <rect key="frame" x="64" y="12" width="432" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,7 +51,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="unu-37-1HO" firstAttribute="leading" secondItem="3cv-aW-Omh" secondAttribute="leading" id="8no-m9-Ode"/>
                         <constraint firstItem="5CL-Tg-JuD" firstAttribute="top" secondItem="3cv-aW-Omh" secondAttribute="top" constant="8" id="Dt3-ZY-oNh"/>

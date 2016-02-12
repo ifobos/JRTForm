@@ -19,11 +19,11 @@
 //THE SOFTWARE.
 
 #import "JRTFormSelectTableViewCell.h"
-#import "JRTFormOptionsTableViewController.h"
+#import "JRTFormSelectPickerViewController.h"
 
 NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell";
 
-@interface JRTFormSelectTableViewCell ()<JRTOptionsTableViewControllerDelegate>
+@interface JRTFormSelectTableViewCell ()<JRTFormSelectPickerViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
@@ -175,10 +175,11 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
 #pragma mark - Options
 
 - (void)displayOptions {
-    JRTFormOptionsTableViewController *optionsViewController = [JRTFormOptionsTableViewController new];
-    optionsViewController.asignatedDelegate = self;
-    optionsViewController.singleSelection = self.singleSelection;
-    [optionsViewController show];
+    JRTFormSelectPickerViewController *selectPickerViewController = [JRTFormSelectPickerViewController new];
+    selectPickerViewController.title = self.name;
+    selectPickerViewController.delegate = self;
+    selectPickerViewController.singleSelection = self.singleSelection;
+    [selectPickerViewController show];
 }
 
 #pragma mark - Actions
