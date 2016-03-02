@@ -116,7 +116,7 @@
 
 - (NSString *(^)(NSString *string))decimal {
     return ^NSString *(NSString *string) {
-               if (![self testString:string WithReg:@"[0-9]+(\\.[0-9])?"]) {
+               if (![self testString:string WithReg:@"[0-9]+(\\.[0-9]+)?"]) {
                    return @"must be only numeric characters.";
                }
                else {
