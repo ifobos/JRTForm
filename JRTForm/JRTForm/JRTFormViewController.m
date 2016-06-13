@@ -16,6 +16,7 @@
 NSString *const ktextField = @"textField";
 NSString *const ksecureTextField = @"secureTextField";
 NSString *const ktextViewField = @"textViewField";
+NSString *const kPhoneNumberField = @"PhoneNumberField";
 NSString *const kselectOptionField = @"selectOptionField";
 NSString *const kselectMultipleOptionField = @"selectMultipleOptionField";
 NSString *const kswitchField = @"switchField";
@@ -27,6 +28,7 @@ NSString *const kmapField = @"mapField";
 @property (nonatomic, strong) JRTFormTextFieldTableViewCell *textField;
 @property (nonatomic, strong) JRTFormTextFieldTableViewCell *secureTextField;
 @property (nonatomic, strong) JRTFormTextViewTableViewCell *textViewField;
+@property (nonatomic, strong) JRTFormPhoneNumberTableViewCell *phoneNumberField;
 @property (nonatomic, strong) JRTFormSelectTableViewCell *selectOptionField;
 @property (nonatomic, strong) JRTFormSelectTableViewCell *selectMultipleOptionField;
 @property (nonatomic, strong) JRTFormSwitchTableViewCell *switchField;
@@ -145,6 +147,35 @@ NSString *const kmapField = @"mapField";
     return _textViewField;
 }
 
+- (JRTFormPhoneNumberTableViewCell *)phoneNumberField {
+    if (!_phoneNumberField) {
+        _phoneNumberField = [self.formTableView formPhoneNumberTableViewCellWithName:kPhoneNumberField];
+        [_phoneNumberField setReturnKeyType:UIReturnKeyNext];
+        __block JRTFormViewController *blocksafeSelf = self;
+        [_phoneNumberField setShouldReturn:^BOOL (UITextField *textField) {
+            [blocksafeSelf.secureTextField fieldBecomeFirstResponder];
+            return NO;
+        }];
+        [_phoneNumberField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate) {
+            NSString *errorMessage = nil;
+            if (!errorMessage) {
+                errorMessage = self.stringValidationHelper.required(stringToValidate);
+            }
+            if (!errorMessage) {
+                errorMessage = self.stringValidationHelper.alpha(stringToValidate);
+            }
+            if (!errorMessage) {
+                errorMessage = self.stringValidationHelper.maxLength(stringToValidate, 8);
+            }
+            if (!errorMessage) {
+                errorMessage = self.stringValidationHelper.minLength(stringToValidate, 3);
+            }
+            return errorMessage;
+        }];
+    }
+    return _phoneNumberField;
+}
+
 - (JRTFormSelectTableViewCell *)selectOptionField {
     if (!_selectOptionField) {
         _selectOptionField = [self.formTableView formSelectTableViewCellWithName:kselectOptionField];
@@ -229,6 +260,7 @@ NSString *const kmapField = @"mapField";
              self.textField,
              self.secureTextField,
              self.textViewField,
+             self.phoneNumberField,
              self.selectOptionField,
              self.selectMultipleOptionField,
              self.dateField,
@@ -239,6 +271,7 @@ NSString *const kmapField = @"mapField";
             NSLog(@"%@: %@", ktextField, blockSelf.textField.text);
             NSLog(@"%@: %@", ksecureTextField, blockSelf.secureTextField.text);
             NSLog(@"%@: %@", ktextViewField, blockSelf.textViewField.text);
+            NSLog(@"%@: %@", kPhoneNumberField, blockSelf.phoneNumberField.text);
             NSLog(@"%@: %@", kselectOptionField, blockSelf.selectOptionField.selectedIndex);
             NSLog(@"%@: %@", kselectMultipleOptionField, blockSelf.selectMultipleOptionField.selectedIndexes);
             NSLog(@"testMap: %f, %f", blockSelf.mapField.coordinate.longitude, blockSelf.mapField.coordinate.latitude);
@@ -298,17 +331,19 @@ NSString *const kmapField = @"mapField";
                     break;
                 case 2: return self.textViewField;
                     break;
-                case 3: return self.selectOptionField;
+                case 3: return self.phoneNumberField;
                     break;
-                case 4: return self.selectMultipleOptionField;
+                case 4: return self.selectOptionField;
                     break;
-                case 5: return self.switchField;
+                case 5: return self.selectMultipleOptionField;
                     break;
-                case 6: return self.dateField;
+                case 6: return self.switchField;
                     break;
-                case 7: return self.mapField;
+                case 7: return self.dateField;
                     break;
-                case 8: return self.submitButton;
+                case 8: return self.mapField;
+                    break;
+                case 9: return self.submitButton;
                     break;
                 default:
                     return nil;

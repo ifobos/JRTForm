@@ -28,6 +28,7 @@
 
 - (JRTFormTextFieldTableViewCell *)formTextFieldTableViewCellWithName:(NSString *)name;
 - (JRTFormTextViewTableViewCell *)formTextViewTableViewCellWithName:(NSString *)name;
+- (JRTFormPhoneNumberTableViewCell *)formPhoneNumberTableViewCellWithName:(NSString *)name;
 - (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString *)name;
 - (JRTFormSwitchTableViewCell *)formSwitchTableViewCellWithName:(NSString *)name;
 - (JRTFormDateTableViewCell *)formDateTableViewCellWithName:(NSString *)name;
