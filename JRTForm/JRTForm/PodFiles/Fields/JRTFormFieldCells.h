@@ -21,6 +21,7 @@
 
 #import "JRTFormTextFieldTableViewCell.h"
 #import "JRTFormTextViewTableViewCell.h"
+#import "JRTFormPhoneNumberTableViewCell.h"
 #import "JRTFormSelectTableViewCell.h"
 #import "JRTFormSwitchTableViewCell.h"
 #import "JRTFormMapTableViewCell.h"

@@ -78,6 +78,18 @@
     }
 }
 
+- (JRTFormPhoneNumberTableViewCell *)formPhoneNumberTableViewCellWithName:(NSString *)name {
+    id cell = [self formFieldCellWithNibName:kJRTFormFieldPhoneNumberTableViewCell andNameIdentifier:name];
+    if ([cell isKindOfClass:[JRTFormPhoneNumberTableViewCell class]]) {
+        return cell;
+    }
+    else {
+        @throw  [[NSException alloc] initWithName:[NSString stringWithFormat:@"%@", self.class]
+                                           reason:[NSString stringWithFormat:@"%@, %@ is not a correct kind of class. ", NSStringFromSelector(_cmd), kJRTFormFieldPhoneNumberTableViewCell]
+                                         userInfo:nil];
+    }
+}
+
 - (JRTFormSelectTableViewCell *)formSelectTableViewCellWithName:(NSString *)name {
     id cell = [self formFieldCellWithNibName:kJRTFormFieldSelectTableViewCell andNameIdentifier:name];
     if ([cell isKindOfClass:[JRTFormSelectTableViewCell class]]) {
