@@ -41,6 +41,10 @@
 		31A542951C6BD65500AB11CE /* JRTFormMapPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A542931C6BD65500AB11CE /* JRTFormMapPickerViewController.xib */; };
 		31A542991C6D219300AB11CE /* JRTFormSelectPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A542971C6D219300AB11CE /* JRTFormSelectPickerViewController.m */; };
 		31A5429A1C6D219300AB11CE /* JRTFormSelectPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31A542981C6D219300AB11CE /* JRTFormSelectPickerViewController.xib */; };
+		52A372051D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A372031D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m */; };
+		52A372061D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A372041D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib */; };
+		631FEDD143BDF0DE54B3C7FF /* libPods-JRTFormTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 186BBD31499724A5A7E2A8BA /* libPods-JRTFormTests.a */; };
+		BF9834361E198ED24FD1B70E /* libPods-JRTForm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B73B9F91350F73CB4CD3F7B /* libPods-JRTForm.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186BBD31499724A5A7E2A8BA /* libPods-JRTFormTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JRTFormTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		315223FD1B6ADFD400FC23F4 /* JRTForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRTForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		315224011B6ADFD400FC23F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		315224021B6ADFD400FC23F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +117,14 @@
 		31A542961C6D219300AB11CE /* JRTFormSelectPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormSelectPickerViewController.h; sourceTree = "<group>"; };
 		31A542971C6D219300AB11CE /* JRTFormSelectPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormSelectPickerViewController.m; sourceTree = "<group>"; };
 		31A542981C6D219300AB11CE /* JRTFormSelectPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormSelectPickerViewController.xib; sourceTree = "<group>"; };
+		41E3FF45AE20DB5AE632E245 /* Pods-JRTForm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRTForm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JRTForm/Pods-JRTForm.debug.xcconfig"; sourceTree = "<group>"; };
+		4A63B5A5EB6B559FE5D53FDE /* Pods-JRTForm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRTForm.release.xcconfig"; path = "Pods/Target Support Files/Pods-JRTForm/Pods-JRTForm.release.xcconfig"; sourceTree = "<group>"; };
+		52A372021D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormPhoneNumberTableViewCell.h; sourceTree = "<group>"; };
+		52A372031D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormPhoneNumberTableViewCell.m; sourceTree = "<group>"; };
+		52A372041D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JRTFormPhoneNumberTableViewCell.xib; sourceTree = "<group>"; };
+		5D1723D18459BA2EEA9F54DB /* Pods-JRTFormTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRTFormTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-JRTFormTests/Pods-JRTFormTests.release.xcconfig"; sourceTree = "<group>"; };
+		8B73B9F91350F73CB4CD3F7B /* libPods-JRTForm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JRTForm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDDF08087029A22060894656 /* Pods-JRTFormTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JRTFormTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JRTFormTests/Pods-JRTFormTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF9834361E198ED24FD1B70E /* libPods-JRTForm.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,18 +140,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				631FEDD143BDF0DE54B3C7FF /* libPods-JRTFormTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BFD362E7E366FA3E2716F13 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8B73B9F91350F73CB4CD3F7B /* libPods-JRTForm.a */,
+				186BBD31499724A5A7E2A8BA /* libPods-JRTFormTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		315223F41B6ADFD400FC23F4 = {
 			isa = PBXGroup;
 			children = (
 				315223FF1B6ADFD400FC23F4 /* JRTForm */,
 				315224191B6ADFD400FC23F4 /* JRTFormTests */,
 				315223FE1B6ADFD400FC23F4 /* Products */,
+				8E54F379DBA162F1D3AC59F0 /* Pods */,
+				0BFD362E7E366FA3E2716F13 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -207,6 +233,7 @@
 		315224BB1B6BDC9400FC23F4 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
+				52A371FE1D0F308B0037E36D /* PhoneNumber */,
 				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
 				319FAB0E1C3C6FC100F46D83 /* Date */,
 				315224C01B6BDD3600FC23F4 /* Map */,
@@ -348,6 +375,27 @@
 			path = Date;
 			sourceTree = "<group>";
 		};
+		52A371FE1D0F308B0037E36D /* PhoneNumber */ = {
+			isa = PBXGroup;
+			children = (
+				52A372021D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.h */,
+				52A372031D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m */,
+				52A372041D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib */,
+			);
+			name = PhoneNumber;
+			sourceTree = "<group>";
+		};
+		8E54F379DBA162F1D3AC59F0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41E3FF45AE20DB5AE632E245 /* Pods-JRTForm.debug.xcconfig */,
+				4A63B5A5EB6B559FE5D53FDE /* Pods-JRTForm.release.xcconfig */,
+				CDDF08087029A22060894656 /* Pods-JRTFormTests.debug.xcconfig */,
+				5D1723D18459BA2EEA9F54DB /* Pods-JRTFormTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,9 +403,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 315224201B6ADFD400FC23F4 /* Build configuration list for PBXNativeTarget "JRTForm" */;
 			buildPhases = (
+				FA1232F8A0ADC5D5F76ECFEA /* [CP] Check Pods Manifest.lock */,
 				315223F91B6ADFD400FC23F4 /* Sources */,
 				315223FA1B6ADFD400FC23F4 /* Frameworks */,
 				315223FB1B6ADFD400FC23F4 /* Resources */,
+				ACED69819F743A1A24FC595F /* [CP] Embed Pods Frameworks */,
+				9DE492972C9CECB2E693794A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,9 +423,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 315224231B6ADFD400FC23F4 /* Build configuration list for PBXNativeTarget "JRTFormTests" */;
 			buildPhases = (
+				836D86148B7E50333DD77CD4 /* [CP] Check Pods Manifest.lock */,
 				315224121B6ADFD400FC23F4 /* Sources */,
 				315224131B6ADFD400FC23F4 /* Frameworks */,
 				315224141B6ADFD400FC23F4 /* Resources */,
+				1F2B96C51EA2E6F78DE56264 /* [CP] Embed Pods Frameworks */,
+				8FBAF4F9939712E5717E6580 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -442,6 +496,7 @@
 				3152240E1B6ADFD400FC23F4 /* Images.xcassets in Resources */,
 				315224B11B6AF20100FC23F4 /* JRTFormSelectTableViewCell.xib in Resources */,
 				3152242A1B6AE0CA00FC23F4 /* JRTFormViewController.xib in Resources */,
+				52A372061D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +508,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1F2B96C51EA2E6F78DE56264 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRTFormTests/Pods-JRTFormTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		836D86148B7E50333DD77CD4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FBAF4F9939712E5717E6580 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRTFormTests/Pods-JRTFormTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DE492972C9CECB2E693794A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRTForm/Pods-JRTForm-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACED69819F743A1A24FC595F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JRTForm/Pods-JRTForm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA1232F8A0ADC5D5F76ECFEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		315223F91B6ADFD400FC23F4 /* Sources */ = {
@@ -473,6 +621,7 @@
 				315224A61B6AF20100FC23F4 /* JRTFormArrayValidations.m in Sources */,
 				315224B91B6AF20100FC23F4 /* JRTFormTextViewTableViewCell.m in Sources */,
 				317C112E1C401716006DB1AA /* TextFieldTableViewCell.m in Sources */,
+				52A372051D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m in Sources */,
 				315224A71B6AF20100FC23F4 /* JRTFormBaseCell.m in Sources */,
 				319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */,
 				315224291B6AE0CA00FC23F4 /* JRTFormViewController.m in Sources */,
@@ -595,6 +744,7 @@
 		};
 		315224211B6ADFD400FC23F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41E3FF45AE20DB5AE632E245 /* Pods-JRTForm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -610,6 +760,7 @@
 		};
 		315224221B6ADFD400FC23F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A63B5A5EB6B559FE5D53FDE /* Pods-JRTForm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -625,6 +776,7 @@
 		};
 		315224241B6ADFD400FC23F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDDF08087029A22060894656 /* Pods-JRTFormTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -645,6 +797,7 @@
 		};
 		315224251B6ADFD400FC23F4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D1723D18459BA2EEA9F54DB /* Pods-JRTFormTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
