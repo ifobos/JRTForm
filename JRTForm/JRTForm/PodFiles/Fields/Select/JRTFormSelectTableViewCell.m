@@ -172,6 +172,10 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
     [self updateStyle];
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    self.placeholderLabel.textColor =  color;
+}
+
 #pragma mark - Options
 
 - (void)displayOptions {

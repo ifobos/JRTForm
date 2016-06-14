@@ -45,6 +45,14 @@ extern NSString *const kJRTFormFieldDateTableViewCell;
  */
 - (void)setErrorMessageInValidationBlock:(NSString *(^)(NSDate *dateToValidate))errorMessageInValidationBlock;
 
+
+/*!
+ Receives color for placeholder
+ 
+ @param color placeholder color
+ */
+- (void)setPlaceholderColor:(UIColor *)color;
+
 /*!
  Method that sets the default appearance with valid data.
  */

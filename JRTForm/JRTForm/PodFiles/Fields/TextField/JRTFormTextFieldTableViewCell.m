@@ -128,6 +128,10 @@ NSString *const kJRTFormFieldTextFieldTableViewCell = @"JRTFormTextFieldTableVie
     self.label.text = name;
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    self.textField.attributedPlaceholder =  [[NSAttributedString alloc] initWithString:self.textField.placeholder attributes:@{NSForegroundColorAttributeName:color}];
+}
+
 #pragma mark - keyboard
 
 - (void)setKeyboardType:(UIKeyboardType)keyboardType {

@@ -32,6 +32,7 @@ extern NSString *const kJRTFormFieldTextFieldTableViewCell;
 - (void)setKeyboardType:(UIKeyboardType)keyboardType;
 - (void)setReturnKeyType:(UIReturnKeyType)returnKeyType;
 - (void)setSecureTextEntry:(BOOL)secure;
+- (void)setPlaceholderColor:(UIColor *)color;
 
 - (void)setDefaultStyle;
 - (void)setEmptyStyle;

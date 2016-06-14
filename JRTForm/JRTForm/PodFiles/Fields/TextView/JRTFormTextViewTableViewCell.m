@@ -134,6 +134,10 @@ NSString *const kJRTFormFieldTextViewTableViewCell = @"JRTFormTextViewTableViewC
     self.label.text = name;
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    self.placeholderLabel.textColor =  color;
+}
+
 #pragma mark - keyboard
 
 - (void)setKeyboardType:(UIKeyboardType)keyboardType {

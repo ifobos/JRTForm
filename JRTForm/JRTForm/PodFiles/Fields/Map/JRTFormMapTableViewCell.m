@@ -63,6 +63,12 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
     return valid;
 }
 
+#pragma mark - Setters
+
+- (void)setPlaceholderColor:(UIColor *)color {
+    self.placeholderLabel.textColor =  color;
+}
+
 #pragma mark - View
 
 - (void)didMoveToSuperview {

@@ -76,6 +76,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormTextFieldTableViewCell *)textField {
     if (!_textField) {
         _textField = [self.formTableView formTextFieldTableViewCellWithName:ktextField];
+        [_textField setPlaceholderColor:[UIColor grayColor]];
         [_textField setReturnKeyType:UIReturnKeyNext];
         __block JRTFormViewController *blocksafeSelf = self;
         [_textField setShouldReturn:^BOOL (UITextField *textField) {
@@ -105,6 +106,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormTextFieldTableViewCell *)secureTextField {
     if (!_secureTextField) {
         _secureTextField = [self.formTableView formTextFieldTableViewCellWithName:ksecureTextField];
+        [_secureTextField setPlaceholderColor:[UIColor grayColor]];
         [_secureTextField setSecureTextEntry:YES];
         [_secureTextField setReturnKeyType:UIReturnKeyNext];
         __block JRTFormViewController *blocksafeSelf = self;
@@ -129,6 +131,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormTextViewTableViewCell *)textViewField {
     if (!_textViewField) {
         _textViewField = [self.formTableView formTextViewTableViewCellWithName:ktextViewField];
+        [_textViewField setPlaceholderColor:[UIColor grayColor]];
         [_textViewField setKeyboardType:UIKeyboardTypeEmailAddress];
         [_textViewField setErrorMessageInValidationBlock:^NSString *(NSString *stringToValidate) {
             NSString *errorMessage = nil;
@@ -150,6 +153,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormPhoneNumberTableViewCell *)phoneNumberField {
     if (!_phoneNumberField) {
         _phoneNumberField = [self.formTableView formPhoneNumberTableViewCellWithName:kPhoneNumberField];
+        [_phoneNumberField setPlaceholderColor:[UIColor grayColor]];
         [_phoneNumberField setReturnKeyType:UIReturnKeyNext];
         __block JRTFormViewController *blocksafeSelf = self;
         [_phoneNumberField setShouldReturn:^BOOL (UITextField *textField) {
@@ -180,6 +184,7 @@ NSString *const kmapField = @"mapField";
     if (!_selectOptionField) {
         _selectOptionField = [self.formTableView formSelectTableViewCellWithName:kselectOptionField];
         _selectOptionField.options = @[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"];
+        [_selectOptionField setPlaceholderColor:[UIColor grayColor]];
         [_selectOptionField setSingleSelection:YES];
         [_selectOptionField setErrorMessageInValidationBlock:^NSString *(NSArray *arrayToValidate) {
             NSString *errorMessage = nil;
@@ -196,6 +201,7 @@ NSString *const kmapField = @"mapField";
     if (!_selectMultipleOptionField) {
         _selectMultipleOptionField = [self.formTableView formSelectTableViewCellWithName:kselectMultipleOptionField];
         _selectMultipleOptionField.options = @[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"];
+        [_selectMultipleOptionField setPlaceholderColor:[UIColor grayColor]];
         [_selectMultipleOptionField setSingleSelection:NO];
         [_selectMultipleOptionField setErrorMessageInValidationBlock:^NSString *(NSArray *arrayToValidate) {
             NSString *errorMessage = nil;
@@ -224,6 +230,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormDateTableViewCell *)dateField {
     if (!_dateField) {
         _dateField = [self.formTableView formDateTableViewCellWithName:kdateField];
+        [_dateField setPlaceholderColor:[UIColor grayColor]];
         [_dateField setErrorMessageInValidationBlock:^NSString *(NSDate *dateToValidate) {
             NSLog(@"date: %@", dateToValidate.description);
             if (!dateToValidate) {
@@ -240,6 +247,7 @@ NSString *const kmapField = @"mapField";
 - (JRTFormMapTableViewCell *)mapField {
     if (!_mapField) {
         _mapField = [self.formTableView formMapTableViewCellWithName:kmapField];
+        [_mapField setPlaceholderColor:[UIColor grayColor]];
         [_mapField setErrorMessageInValidationBlock:^NSString *(CLLocationCoordinate2D locationCoordinate) {
             if (locationCoordinate.latitude == 0 && locationCoordinate.longitude == 0) {
                 return @"is required";

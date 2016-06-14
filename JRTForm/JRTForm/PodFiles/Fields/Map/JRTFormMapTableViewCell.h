@@ -28,6 +28,7 @@ extern NSString *const kJRTFormFieldMapTableViewCell;
 @interface JRTFormMapTableViewCell : JRTFormBaseCell
 
 @property (nonatomic) CLLocationCoordinate2D coordinate;
+- (void)setPlaceholderColor:(UIColor *)color;
 
 - (void)setErrorMessageInValidationBlock:(NSString *(^)(CLLocationCoordinate2D locationCoordinate))errorMessageInValidationBlock;
 

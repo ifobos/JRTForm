@@ -127,6 +127,10 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     [self updateStyle];
 }
 
+- (void)setPlaceholderColor:(UIColor *)color {
+    self.placeholderLabel.textColor =  color;
+}
+
 #pragma mark - DatePicker
 
 - (void)displayDatePicker {

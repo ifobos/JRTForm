@@ -32,6 +32,8 @@ extern NSString *const kJRTFormFieldSelectTableViewCell;
 
 - (void)setErrorMessageInValidationBlock:(NSString *(^)(NSArray *arrayToValidate))errorMessageInValidationBlock;
 
+- (void)setPlaceholderColor:(UIColor *)color;
+
 - (void)setDefaultStyle;
 - (void)setEmptyStyle;
 - (void)setErrorStyleWithMessage:(NSString *)errorMessage;
