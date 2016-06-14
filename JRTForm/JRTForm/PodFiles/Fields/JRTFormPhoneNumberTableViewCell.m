@@ -17,6 +17,26 @@ NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTabl
 
 @implementation JRTFormPhoneNumberTableViewCell
 
+- (instancetype)init {
+    if (self = [super init]){
+        [self commonInit];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    [self setKeyboardType:UIKeyboardTypePhonePad];
+}
+
+
+
 - (NBAsYouTypeFormatter *)formatter {
     if (!_formatter) {
         _formatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"US"];
