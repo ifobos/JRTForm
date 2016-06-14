@@ -7,7 +7,7 @@
 //
 
 #import "JRTFormPhoneNumberTableViewCell.h"
-#import <libPhoneNumber-iOS/NBAsYouTypeFormatter.h>
+#import "NBAsYouTypeFormatter.h"
 
 NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTableViewCell";
 
