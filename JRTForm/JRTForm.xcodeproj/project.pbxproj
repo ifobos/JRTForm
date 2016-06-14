@@ -159,11 +159,11 @@
 		315223F41B6ADFD400FC23F4 = {
 			isa = PBXGroup;
 			children = (
+				0BFD362E7E366FA3E2716F13 /* Frameworks */,
 				315223FF1B6ADFD400FC23F4 /* JRTForm */,
 				315224191B6ADFD400FC23F4 /* JRTFormTests */,
-				315223FE1B6ADFD400FC23F4 /* Products */,
 				8E54F379DBA162F1D3AC59F0 /* Pods */,
-				0BFD362E7E366FA3E2716F13 /* Frameworks */,
+				315223FE1B6ADFD400FC23F4 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,10 +233,10 @@
 		315224BB1B6BDC9400FC23F4 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
-				52A371FE1D0F308B0037E36D /* PhoneNumber */,
 				315224BE1B6BDCFE00FC23F4 /* BaseCell */,
 				319FAB0E1C3C6FC100F46D83 /* Date */,
 				315224C01B6BDD3600FC23F4 /* Map */,
+				52A371FE1D0F308B0037E36D /* PhoneNumber */,
 				315224C11B6BDD5200FC23F4 /* Select */,
 				315224C31B6BDEBB00FC23F4 /* Submit */,
 				315224C41B6BDEE600FC23F4 /* Switch */,
@@ -289,12 +289,12 @@
 		315224C01B6BDD3600FC23F4 /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				315224871B6AF20100FC23F4 /* JRTFormMapTableViewCell.h */,
-				315224881B6AF20100FC23F4 /* JRTFormMapTableViewCell.m */,
-				315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */,
 				31A542911C6BD65500AB11CE /* JRTFormMapPickerViewController.h */,
 				31A542921C6BD65500AB11CE /* JRTFormMapPickerViewController.m */,
 				31A542931C6BD65500AB11CE /* JRTFormMapPickerViewController.xib */,
+				315224871B6AF20100FC23F4 /* JRTFormMapTableViewCell.h */,
+				315224881B6AF20100FC23F4 /* JRTFormMapTableViewCell.m */,
+				315224891B6AF20100FC23F4 /* JRTFormMapTableViewCell.xib */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -382,7 +382,7 @@
 				52A372031D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.m */,
 				52A372041D0F31E20037E36D /* JRTFormPhoneNumberTableViewCell.xib */,
 			);
-			name = PhoneNumber;
+			path = PhoneNumber;
 			sourceTree = "<group>";
 		};
 		8E54F379DBA162F1D3AC59F0 /* Pods */ = {
