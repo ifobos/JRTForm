@@ -13,6 +13,7 @@ NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTabl
 
 @interface JRTFormPhoneNumberTableViewCell ()
 @property (strong, nonatomic) NBAsYouTypeFormatter *formatter;
+@property (assign, nonatomic) UIKeyboardType phoneKeyboardType;
 @end
 
 @implementation JRTFormPhoneNumberTableViewCell
@@ -32,7 +33,17 @@ NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTabl
 }
 
 - (void)commonInit {
-    [self setKeyboardType:UIKeyboardTypePhonePad];
+    self.phoneKeyboardType = UIKeyboardTypePhonePad;
+}
+
+- (void)didMoveToSuperview {
+    [super didMoveToSuperview];
+    [self setKeyboardType:self.phoneKeyboardType];
+}
+
+- (void)setKeyboardType:(UIKeyboardType)keyboardType {
+        self.phoneKeyboardType = keyboardType;
+        [super setKeyboardType:self.phoneKeyboardType];
 }
 
 
