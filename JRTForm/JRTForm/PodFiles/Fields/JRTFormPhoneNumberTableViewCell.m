@@ -7,10 +7,22 @@
 //
 
 #import "JRTFormPhoneNumberTableViewCell.h"
+#import <NBAsYouTypeFormatter.h>
 
 NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTableViewCell";
 
+@interface JRTFormPhoneNumberTableViewCell ()
+@property (strong, nonatomic) NBAsYouTypeFormatter *formatter;
+@end
+
 @implementation JRTFormPhoneNumberTableViewCell
+
+- (NBAsYouTypeFormatter *)formatter {
+    if (!_formatter) {
+        _formatter = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"US"];
+    }
+    return _formatter;
+}
 
 - (IBAction)editingChangedAction:(UITextField *)textField {
     NSString *cleanedText = [[[[textField.text
@@ -19,9 +31,8 @@ NSString *const kJRTFormFieldPhoneNumberTableViewCell = @"JRTFormPhoneNumberTabl
                               stringByReplacingOccurrencesOfString:@"(" withString:@""]
                              stringByReplacingOccurrencesOfString:@")" withString:@""];
     
-    NBAsYouTypeFormatter *formater = [[NBAsYouTypeFormatter alloc] initWithRegionCode:@"US"];
     
-    NSString * newText = [formater inputString:cleanedText];
+    NSString * newText = [self.formatter inputString:cleanedText];
     
     
     if (![textField.text isEqualToString:[newText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]]) {
