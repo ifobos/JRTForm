@@ -25,9 +25,10 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
 
 @interface JRTFormDateTableViewCell ()<JRTDatePickerViewControllerDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *label;
-@property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
-@property (strong, nonatomic) IBOutlet UILabel *textSelectedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UILabel *placeholderLabel;
+@property (weak, nonatomic) IBOutlet UILabel *textSelectedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cleanButton;
 @property (nonatomic, strong) UIColor *labelColor;
 @property (nonatomic) BOOL hideableLabel;
 
@@ -56,6 +57,7 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     self.label.text = self.name;
     self.placeholderLabel.hidden = YES;
     self.textSelectedLabel.hidden = NO;
+    self.cleanButton.hidden = NO;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -68,6 +70,7 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     self.label.text = self.name;
     self.placeholderLabel.hidden = NO;
     self.textSelectedLabel.hidden = YES;
+    self.cleanButton.hidden = YES;
     if (self.hideableLabel) {
         self.label.hidden = YES;
     }
@@ -80,6 +83,7 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     self.label.text = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
     self.textSelectedLabel.hidden = ([self.textSelectedLabel.text length] == 0);
     self.placeholderLabel.hidden = !self.textSelectedLabel.hidden;
+    self.cleanButton.hidden = self.textSelectedLabel.hidden;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -146,4 +150,7 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     [self displayDatePicker];
 }
 
+- (IBAction)cleanAction:(id)sender {
+    self.date = nil;
+}
 @end

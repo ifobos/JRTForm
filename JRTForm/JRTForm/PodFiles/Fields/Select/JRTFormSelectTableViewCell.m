@@ -28,6 +28,7 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (strong, nonatomic) IBOutlet UILabel *textSelectedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cleanButton;
 @property (nonatomic, strong) UIColor *labelColor;
 @property (nonatomic) BOOL hideableLabel;
 
@@ -57,6 +58,7 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
     self.label.text = self.name;
     self.placeholderLabel.hidden = YES;
     self.textSelectedLabel.hidden = NO;
+    self.cleanButton.hidden = NO;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -69,6 +71,7 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
     self.label.text = self.name;
     self.placeholderLabel.hidden = NO;
     self.textSelectedLabel.hidden = YES;
+    self.cleanButton.hidden = YES;
     if (self.hideableLabel) {
         self.label.hidden = YES;
     }
@@ -81,6 +84,7 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
     self.label.text = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
     self.textSelectedLabel.hidden = ([self.textSelectedLabel.text length] == 0);
     self.placeholderLabel.hidden = !self.textSelectedLabel.hidden;
+    self.cleanButton.hidden = self.textSelectedLabel.hidden;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -190,6 +194,10 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
 
 - (IBAction)touchUpInside:(id)sender {
     [self displayOptions];
+}
+
+- (IBAction)cleanAction:(id)sender {
+    self.selectedIndexes = nil;
 }
 
 @end

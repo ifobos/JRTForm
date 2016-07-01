@@ -45,10 +45,24 @@
                             <action selector="touchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="QlG-Ez-tj9"/>
                         </connections>
                     </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95X-ec-B9d">
+                        <rect key="frame" x="267" y="9.5" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="33" id="Efa-80-Cnk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="✕">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="cleanAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="D2j-dF-DKL"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="cSz-Cf-ape" secondAttribute="trailing" constant="20" symbolic="YES" id="1Pe-5P-8hB"/>
                     <constraint firstItem="cSz-Cf-ape" firstAttribute="height" secondItem="Pvr-ev-Cg1" secondAttribute="height" id="277-0g-etE"/>
+                    <constraint firstItem="95X-ec-B9d" firstAttribute="baseline" secondItem="cSz-Cf-ape" secondAttribute="baseline" id="2lj-bv-WIx"/>
                     <constraint firstItem="Wu3-oB-FFc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Pq9-s5-Kel"/>
                     <constraint firstItem="cSz-Cf-ape" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="Q20-hX-AVo"/>
                     <constraint firstItem="cSz-Cf-ape" firstAttribute="top" secondItem="Wu3-oB-FFc" secondAttribute="bottom" constant="1" id="S5p-nh-538"/>
@@ -58,6 +72,7 @@
                     <constraint firstItem="cSz-Cf-ape" firstAttribute="width" secondItem="Pvr-ev-Cg1" secondAttribute="width" id="l6G-a0-dUh"/>
                     <constraint firstAttribute="trailing" secondItem="Pvr-ev-Cg1" secondAttribute="trailing" constant="20" symbolic="YES" id="ovn-Es-dC5"/>
                     <constraint firstItem="FbX-Pe-PRX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="pfR-dO-IVh"/>
+                    <constraint firstAttribute="trailing" secondItem="95X-ec-B9d" secondAttribute="trailing" constant="20" symbolic="YES" id="qZ1-N8-7E3"/>
                     <constraint firstAttribute="trailing" secondItem="FbX-Pe-PRX" secondAttribute="trailing" constant="20" symbolic="YES" id="qaL-gQ-R88"/>
                     <constraint firstItem="Wu3-oB-FFc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="tpu-9f-UMQ"/>
                     <constraint firstItem="cSz-Cf-ape" firstAttribute="centerY" secondItem="Pvr-ev-Cg1" secondAttribute="centerY" id="u5M-7q-azA"/>
@@ -75,6 +90,7 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cleanButton" destination="95X-ec-B9d" id="jTl-s7-2oe"/>
                 <outlet property="label" destination="Wu3-oB-FFc" id="LAR-O3-yu5"/>
                 <outlet property="placeholderLabel" destination="Pvr-ev-Cg1" id="fJv-QE-AUC"/>
                 <outlet property="textLabel" destination="cSz-Cf-ape" id="0dp-ZI-POM"/>

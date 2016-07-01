@@ -28,6 +28,8 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
 @property (strong, nonatomic) IBOutlet UILabel *label;
 @property (strong, nonatomic) IBOutlet UILabel *placeholderLabel;
 @property (strong, nonatomic) IBOutlet UILabel *textSelectedLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cleanButton;
+
 @property (nonatomic, strong) UIColor *labelColor;
 @property (nonatomic) BOOL hideableLabel;
 
@@ -86,6 +88,7 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
     self.label.text = self.name;
     self.placeholderLabel.hidden = YES;
     self.textSelectedLabel.hidden = NO;
+    self.cleanButton.hidden = NO;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -98,6 +101,7 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
     self.label.text = self.name;
     self.placeholderLabel.hidden = NO;
     self.textSelectedLabel.hidden = YES;
+    self.cleanButton.hidden = YES;
     if (self.hideableLabel) {
         self.label.hidden = YES;
     }
@@ -108,8 +112,9 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
         self.label.textColor = [UIColor redColor];
     }
     self.label.text = [NSString stringWithFormat:@"%@ %@", self.name, errorMessage];
-    self.textSelectedLabel.hidden = ([self.textSelectedLabel.text length] == 0);
+    self.textSelectedLabel.hidden = !(self.coordinate.latitude != 0 || self.coordinate.longitude != 0);
     self.placeholderLabel.hidden = !self.textSelectedLabel.hidden;
+    self.cleanButton.hidden = self.textSelectedLabel.hidden;
     if (self.hideableLabel) {
         self.label.hidden = NO;
     }
@@ -119,7 +124,7 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
     if (!self.isValid) {
         [self setErrorStyleWithMessage:self.errorMessageInValidationBlock(self.coordinate)];
     }
-    else if (self.coordinate.latitude != 0 && self.coordinate.longitude != 0) {
+    else if (self.coordinate.latitude != 0 || self.coordinate.longitude != 0) {
         [self setDefaultStyle];
     }
     else {
@@ -140,6 +145,10 @@ NSString *const kJRTFormFieldMapTableViewCell = @"JRTFormMapTableViewCell";
 
 - (IBAction)touchUpInside:(id)sender {
     [self displayMapPicker];
+}
+
+- (IBAction)cleanAction:(id)sender {
+    self.coordinate = CLLocationCoordinate2DMake(0, 0);
 }
 
 @end

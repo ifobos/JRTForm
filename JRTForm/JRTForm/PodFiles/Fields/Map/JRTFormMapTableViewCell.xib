@@ -22,7 +22,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSz-Hu-LAY" userLabel="textSelectedLabel">
-                        <rect key="frame" x="20" y="18" width="280" height="17"/>
+                        <rect key="frame" x="20" y="18" width="247" height="17"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="highlightedColor"/>
@@ -46,26 +46,42 @@
                             <action selector="touchUpInside:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="lWA-K2-hah"/>
                         </connections>
                     </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcc-xo-Tbd">
+                        <rect key="frame" x="267" y="9.5" width="33" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="33" id="n9f-eu-e2u"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="✕">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="cleanAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4tj-4H-dho"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="DnQ-s3-Kms" firstAttribute="top" secondItem="WDq-92-aUP" secondAttribute="bottom" constant="1" id="35l-Wh-CkR"/>
                     <constraint firstItem="PSz-Hu-LAY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="Avx-2M-NiS"/>
+                    <constraint firstItem="kcc-xo-Tbd" firstAttribute="baseline" secondItem="PSz-Hu-LAY" secondAttribute="baseline" id="BeS-xM-7lt"/>
                     <constraint firstAttribute="trailing" secondItem="BFm-P5-ODJ" secondAttribute="trailing" constant="20" id="DJu-nh-86M"/>
+                    <constraint firstAttribute="trailing" secondItem="kcc-xo-Tbd" secondAttribute="trailing" constant="20" symbolic="YES" id="Gqk-55-CAQ"/>
                     <constraint firstItem="DnQ-s3-Kms" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="Mp3-8Y-qv2"/>
                     <constraint firstItem="WDq-92-aUP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="Mt8-hk-yYE"/>
                     <constraint firstItem="PSz-Hu-LAY" firstAttribute="top" secondItem="WDq-92-aUP" secondAttribute="bottom" constant="1" id="RCb-8W-4jg"/>
                     <constraint firstItem="BFm-P5-ODJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Stg-kD-mtk"/>
                     <constraint firstItem="DnQ-s3-Kms" firstAttribute="top" secondItem="WDq-92-aUP" secondAttribute="bottom" constant="1" id="UHm-xM-x0t"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="PSz-Hu-LAY" secondAttribute="trailing" constant="12" id="WCd-zk-WTI"/>
                     <constraint firstAttribute="trailingMargin" secondItem="DnQ-s3-Kms" secondAttribute="trailing" constant="12" id="dtY-fa-aSY"/>
                     <constraint firstItem="PSz-Hu-LAY" firstAttribute="top" secondItem="WDq-92-aUP" secondAttribute="bottom" constant="1" id="e2N-db-m3F"/>
                     <constraint firstItem="BFm-P5-ODJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="gjZ-2X-WEa"/>
                     <constraint firstItem="WDq-92-aUP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="jMp-jd-qEa"/>
                     <constraint firstAttribute="trailingMargin" secondItem="WDq-92-aUP" secondAttribute="trailing" constant="12" id="mcT-sd-VCK"/>
+                    <constraint firstItem="kcc-xo-Tbd" firstAttribute="leading" secondItem="PSz-Hu-LAY" secondAttribute="trailing" id="srt-S2-Wqq"/>
                     <constraint firstAttribute="bottom" secondItem="BFm-P5-ODJ" secondAttribute="bottom" id="tQv-jS-vn7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="cleanButton" destination="kcc-xo-Tbd" id="cab-IZ-t7n"/>
                 <outlet property="label" destination="WDq-92-aUP" id="Xfe-dm-has"/>
                 <outlet property="placeholderLabel" destination="DnQ-s3-Kms" id="HTo-gR-hsf"/>
                 <outlet property="textSelectedLabel" destination="PSz-Hu-LAY" id="MO2-2Z-Nhe"/>
