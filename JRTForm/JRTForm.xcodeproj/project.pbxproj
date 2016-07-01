@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		312F90B71D26BFF500974C47 /* JRTFormRoundedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 312F90B61D26BFF500974C47 /* JRTFormRoundedView.m */; };
 		315224031B6ADFD400FC23F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224021B6ADFD400FC23F4 /* main.m */; };
 		315224061B6ADFD400FC23F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 315224051B6ADFD400FC23F4 /* AppDelegate.m */; };
 		3152240E1B6ADFD400FC23F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3152240D1B6ADFD400FC23F4 /* Images.xcassets */; };
@@ -59,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		186BBD31499724A5A7E2A8BA /* libPods-JRTFormTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JRTFormTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		312F90B51D26BFF500974C47 /* JRTFormRoundedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRTFormRoundedView.h; sourceTree = "<group>"; };
+		312F90B61D26BFF500974C47 /* JRTFormRoundedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRTFormRoundedView.m; sourceTree = "<group>"; };
 		315223FD1B6ADFD400FC23F4 /* JRTForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JRTForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		315224011B6ADFD400FC23F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		315224021B6ADFD400FC23F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -156,6 +159,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		312F90B41D26BFF500974C47 /* RoundedView */ = {
+			isa = PBXGroup;
+			children = (
+				312F90B51D26BFF500974C47 /* JRTFormRoundedView.h */,
+				312F90B61D26BFF500974C47 /* JRTFormRoundedView.m */,
+			);
+			path = RoundedView;
+			sourceTree = "<group>";
+		};
 		315223F41B6ADFD400FC23F4 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +234,7 @@
 		3152247D1B6AF20100FC23F4 /* PodFiles */ = {
 			isa = PBXGroup;
 			children = (
+				312F90B41D26BFF500974C47 /* RoundedView */,
 				315224BB1B6BDC9400FC23F4 /* Fields */,
 				315224BC1B6BDCAD00FC23F4 /* Helpers */,
 				315224BF1B6BDD1800FC23F4 /* TableView */,
@@ -625,6 +638,7 @@
 				315224A71B6AF20100FC23F4 /* JRTFormBaseCell.m in Sources */,
 				319FAB151C3C701C00F46D83 /* JRTFormDatePickerViewController.m in Sources */,
 				315224291B6AE0CA00FC23F4 /* JRTFormViewController.m in Sources */,
+				312F90B71D26BFF500974C47 /* JRTFormRoundedView.m in Sources */,
 				315224B31B6AF20100FC23F4 /* JRTFormSubmitButtonTableViewCell.m in Sources */,
 				315224031B6ADFD400FC23F4 /* main.m in Sources */,
 			);
