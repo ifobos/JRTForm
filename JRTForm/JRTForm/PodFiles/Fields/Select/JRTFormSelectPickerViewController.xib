@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JRTFormSelectPickerViewController">
             <connections>
+                <outlet property="activityIndicator" destination="34d-TQ-woP" id="Vie-6s-zbQ"/>
                 <outlet property="optionsTableView" destination="prF-6F-xqy" id="GPM-Mz-8IB"/>
                 <outlet property="titleLabel" destination="Ufx-DH-P74" id="cef-e1-sBA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,7 +32,7 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ufx-DH-P74">
-                            <rect key="frame" x="64" y="12" width="464" height="21"/>
+                            <rect key="frame" x="77" y="12" width="439" height="21"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -54,20 +55,26 @@
                                 <outlet property="delegate" destination="-1" id="StA-rq-Dwk"/>
                             </connections>
                         </tableView>
+                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="34d-TQ-woP">
+                            <rect key="frame" x="516" y="13" width="20" height="20"/>
+                        </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Ufx-DH-P74" firstAttribute="leading" secondItem="Nwf-ms-SiU" secondAttribute="trailing" constant="8" id="Bad-ik-pPE"/>
+                        <constraint firstItem="Ufx-DH-P74" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nwf-ms-SiU" secondAttribute="trailing" constant="8" id="Bad-ik-pPE"/>
                         <constraint firstAttribute="trailing" secondItem="HqG-gB-fbp" secondAttribute="trailing" constant="8" id="JhU-mS-eoN"/>
                         <constraint firstItem="Nwf-ms-SiU" firstAttribute="top" secondItem="rs9-CN-bku" secondAttribute="top" constant="8" id="NKa-A0-AAc"/>
+                        <constraint firstItem="HqG-gB-fbp" firstAttribute="leading" secondItem="34d-TQ-woP" secondAttribute="trailing" id="OIm-JN-1EE"/>
                         <constraint firstItem="Ufx-DH-P74" firstAttribute="top" secondItem="rs9-CN-bku" secondAttribute="top" constant="12" id="amr-lP-RvG"/>
                         <constraint firstItem="prF-6F-xqy" firstAttribute="top" secondItem="HqG-gB-fbp" secondAttribute="bottom" constant="6" id="br8-kl-cFe"/>
+                        <constraint firstItem="Ufx-DH-P74" firstAttribute="centerX" secondItem="rs9-CN-bku" secondAttribute="centerX" id="cJo-he-Gtx"/>
                         <constraint firstAttribute="trailing" secondItem="prF-6F-xqy" secondAttribute="trailing" id="ikR-oT-l8T"/>
                         <constraint firstItem="prF-6F-xqy" firstAttribute="leading" secondItem="rs9-CN-bku" secondAttribute="leading" id="jK8-Bg-hu4"/>
+                        <constraint firstItem="34d-TQ-woP" firstAttribute="centerY" secondItem="HqG-gB-fbp" secondAttribute="centerY" id="k50-c7-NXg"/>
                         <constraint firstAttribute="bottom" secondItem="prF-6F-xqy" secondAttribute="bottom" id="kpw-G4-g6M"/>
                         <constraint firstItem="Nwf-ms-SiU" firstAttribute="leading" secondItem="rs9-CN-bku" secondAttribute="leading" constant="8" id="onm-2u-dS6"/>
                         <constraint firstItem="HqG-gB-fbp" firstAttribute="top" secondItem="rs9-CN-bku" secondAttribute="top" constant="8" id="rKr-pu-1Mw"/>
-                        <constraint firstItem="HqG-gB-fbp" firstAttribute="leading" secondItem="Ufx-DH-P74" secondAttribute="trailing" constant="8" id="zPi-9G-zGp"/>
+                        <constraint firstItem="34d-TQ-woP" firstAttribute="leading" secondItem="Ufx-DH-P74" secondAttribute="trailing" id="tAp-WI-Ytw"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

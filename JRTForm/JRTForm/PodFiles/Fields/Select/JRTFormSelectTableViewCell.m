@@ -34,12 +34,12 @@ NSString *const kJRTFormFieldSelectTableViewCell = @"JRTFormSelectTableViewCell"
 
 @property (nonatomic, strong) NSArray *selectedOptions;
 @property (nonatomic, copy) NSString * (^errorMessageInValidationBlock) (NSArray *arrayToValidate);
-
 @end
 
 @implementation JRTFormSelectTableViewCell
 
 @synthesize name = _name;
+@synthesize options = _options;
 
 #pragma mark - View
 

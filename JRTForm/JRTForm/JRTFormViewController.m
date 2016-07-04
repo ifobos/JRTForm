@@ -183,7 +183,11 @@ NSString *const kmapField = @"mapField";
 - (JRTFormSelectTableViewCell *)selectOptionField {
     if (!_selectOptionField) {
         _selectOptionField = [self.formTableView formSelectTableViewCellWithName:kselectOptionField];
-        _selectOptionField.options = @[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"];
+        [_selectOptionField setFetchOptionsBlock:^(void (^success)(NSArray<NSString *> *options)) {
+             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 1.0e9 * 5), dispatch_get_main_queue(), ^(void) {
+                 success(@[@"Red", @"Blue", @"Green", @"Orange", @"Black", @"White", @"Gray"]);
+            });
+        }];
         [_selectOptionField setPlaceholderColor:[UIColor grayColor]];
         [_selectOptionField setSingleSelection:YES];
         [_selectOptionField setErrorMessageInValidationBlock:^NSString *(NSArray *arrayToValidate) {

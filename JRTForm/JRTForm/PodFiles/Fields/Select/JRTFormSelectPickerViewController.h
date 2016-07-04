@@ -24,6 +24,8 @@
 @protocol JRTFormSelectPickerViewControllerDelegate
 @property (nonatomic, strong) NSArray *options;
 @property (nonatomic, strong) NSArray *selectedIndexes;
+@property (nonatomic, copy) void (^fetchOptionsBlock) (void (^completionBlock) (NSArray <NSString *> *options));
+
 @end
 
 @interface JRTFormSelectPickerViewController : JRTFormModalBaseViewController

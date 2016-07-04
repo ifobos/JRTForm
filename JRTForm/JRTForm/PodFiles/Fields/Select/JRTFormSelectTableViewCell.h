@@ -30,6 +30,8 @@ extern NSString *const kJRTFormFieldSelectTableViewCell;
 @property (nonatomic) BOOL singleSelection;
 @property (nonatomic, readonly) NSNumber *selectedIndex;
 
+@property (nonatomic, copy) void (^fetchOptionsBlock) (void (^completionBlock) (NSArray <NSString *> *options));
+
 - (void)setErrorMessageInValidationBlock:(NSString *(^)(NSArray *arrayToValidate))errorMessageInValidationBlock;
 
 - (void)setPlaceholderColor:(UIColor *)color;
