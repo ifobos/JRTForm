@@ -93,7 +93,6 @@
                 <outlet property="cleanButton" destination="95X-ec-B9d" id="jTl-s7-2oe"/>
                 <outlet property="label" destination="Wu3-oB-FFc" id="LAR-O3-yu5"/>
                 <outlet property="placeholderLabel" destination="Pvr-ev-Cg1" id="fJv-QE-AUC"/>
-                <outlet property="textLabel" destination="cSz-Cf-ape" id="0dp-ZI-POM"/>
                 <outlet property="textSelectedLabel" destination="cSz-Cf-ape" id="ddh-eo-ETi"/>
             </connections>
             <point key="canvasLocation" x="485" y="307"/>

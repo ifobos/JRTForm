@@ -166,12 +166,6 @@ NSString *const kmapField = @"mapField";
                 errorMessage = self.stringValidationHelper.required(stringToValidate);
             }
             if (!errorMessage) {
-                errorMessage = self.stringValidationHelper.alpha(stringToValidate);
-            }
-            if (!errorMessage) {
-                errorMessage = self.stringValidationHelper.maxLength(stringToValidate, 8);
-            }
-            if (!errorMessage) {
                 errorMessage = self.stringValidationHelper.minLength(stringToValidate, 3);
             }
             return errorMessage;
