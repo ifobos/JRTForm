@@ -50,7 +50,9 @@
             __block typeof (self) blockSelf = self;
             void (^completionBlock) (NSArray <NSString *> *options) = ^void(NSArray <NSString *> *options){
                 blockSelf.delegate.options = options;
-                [blockSelf.optionsTableView reloadData];
+                if (options.count > 0) {
+                    [blockSelf.optionsTableView reloadData];
+                }
                 [blockSelf.activityIndicator stopAnimating];
             };
             
