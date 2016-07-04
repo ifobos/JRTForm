@@ -97,6 +97,9 @@
     if ([self.selectedIndexes indexOfObject:@(indexPath.row)] != NSNotFound) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
 
