@@ -51,6 +51,7 @@
             void (^completionBlock) (NSArray <NSString *> *options) = ^void(NSArray <NSString *> *options){
                 blockSelf.delegate.options = options;
                 if (options.count > 0) {
+                    [blockSelf loadSelectedIndexes];
                     [blockSelf.optionsTableView reloadData];
                 }
                 [blockSelf.activityIndicator stopAnimating];
@@ -72,6 +73,10 @@
 - (void)setUp {
     self.titleLabel.text = self.title;
     self.optionsTableView.tableFooterView = [UIView new];
+    [self loadSelectedIndexes];
+}
+
+- (void)loadSelectedIndexes {
     [self.selectedIndexes removeAllObjects];
     [self.selectedIndexes addObjectsFromArray:self.delegate.selectedIndexes];
 }
