@@ -30,6 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.titleLabel.text = self.title;
+    if (self.delegate.date) {
+        self.datePicker.date = self.delegate.date;
+    }
 }
 
 - (IBAction)cancel:(id)sender {
