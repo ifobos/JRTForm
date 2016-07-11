@@ -32,6 +32,11 @@
  */
 @property (nonatomic, strong) NSDate *date;
 
+/*!
+ Property that contains the date formatter
+ */
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
 @end
 
 /*!

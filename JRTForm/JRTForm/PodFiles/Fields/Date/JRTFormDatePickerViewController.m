@@ -33,6 +33,9 @@
     if (self.delegate.date) {
         self.datePicker.date = self.delegate.date;
     }
+    if (self.delegate.dateFormatter) {
+        self.datePicker.timeZone = self.delegate.dateFormatter.timeZone;
+    }
 }
 
 - (IBAction)cancel:(id)sender {
