@@ -37,6 +37,11 @@ extern NSString *const kJRTFormFieldDateTableViewCell;
 @property (nonatomic, strong) NSDate *date;
 
 /*!
+ Property that contains the date formatter
+ */
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+/*!
  Receiving the block method validation for date captured.
  
  @param errorMessageInValidationBlock block must validate the date received and

@@ -114,6 +114,15 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
     return valid;
 }
 
+- (NSDateFormatter *)dateFormatter {
+    if (!_dateFormatter) {
+        _dateFormatter = [NSDateFormatter new];
+        [_dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+        [_dateFormatter setDateFormat:@"MMMM dd, yyyy"];
+    }
+    return _dateFormatter;
+}
+
 #pragma mark - Setters
 
 - (void)setName:(NSString *)name {
@@ -124,10 +133,7 @@ NSString *const kJRTFormFieldDateTableViewCell = @"JRTFormDateTableViewCell";
 
 - (void)setDate:(NSDate *)date {
     _date = date;
-    NSDateFormatter *dateFormatter = [NSDateFormatter new];
-    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    [dateFormatter setDateFormat:@"MMMM dd, yyyy"];
-    self.textSelectedLabel.text = [dateFormatter stringFromDate:date];
+    self.textSelectedLabel.text = [self.dateFormatter stringFromDate:date];
     [self updateStyle];
 }
 
